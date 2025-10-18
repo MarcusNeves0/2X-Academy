@@ -1,0 +1,534 @@
+/* style.css */
+
+/* 1. IMPORTAÇÃO DA NOVA FONTE (DEVE SER A PRIMEIRA LINHA DO ARQUIVO) */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #555;
+    max-width: 800px;
+    text-align: center;
+}
+
+
+/* --- CABEÇALHO PADRÃO --- */
+header {
+    width: 100%;
+    background-color: white;
+    padding: 20px 0;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 100;
+    position: relative;
+}
+
+/* 2. ESTILO DO TÍTULO ATUALIZADO */
+header h1 {
+    font-family: 'Russo One', sans-serif; /* Usa a nova fonte */
+    font-size: 3.5em; /* Tamanho maior */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    margin: 0;
+    margin-bottom: 15px;
+    color: #1a202c; /* Cor de preenchimento escura */
+    /* Efeito de contorno verde neon usando text-shadow */
+    text-shadow: 
+        -2px -2px 0 #00f070,  
+         2px -2px 0 #00f070,
+        -2px  2px 0 #00f070,
+         2px  2px 0 #00f070;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-botao {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border: 2px solid black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-botao:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* --- CONTEÚDO PRINCIPAL (da maioria das páginas, exceto artigos com fundo especial) --- */
+main {
+    width: 100%;
+    max-width: 1100px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* --- SEÇÃO DE NOTÍCIAS (PÁGINA INICIAL) --- */
+.noticias-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap; 
+}
+
+.noticias-container-fullwidth {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.noticia-box {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 3px solid red;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #ccc;
+    transition: transform 0.2s ease-in-out;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.noticias-container-fullwidth .noticia-link {
+    width: 100%;
+    max-width: 790px;
+}
+
+.noticia-box-rectangular {
+    width: 100%;
+    height: 0;
+    padding-top: 56.06%;
+    position: relative;
+}
+
+.noticia-box-rectangular .noticia-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.noticia-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.noticia-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.noticia-box:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.noticia-box h3 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 1.5em;
+    margin: 15px;
+    text-align: center;
+}
+
+.noticia-box.background-warwick {
+    background-image: url('champs/warwick.avif');
+}
+
+.noticia-box.background-ahri {
+    background-image: url('champs/ahri.avif');
+}
+
+.noticia-box.background-rank {
+    background-image: url('assets/Rank.avif');
+}
+
+/* Fundo para a notícia do pack Arcane */
+.noticia-box.background-arcane {
+    background-image: url('assets/arcane-pack.jpeg'); /* <-- A CORREÇÃO ESTÁ AQUI */
+}
+
+
+/* --- TIER LIST (PÁGINA DE CAMPEÕES) --- */
+.tierlist-container {
+    width: 100%;
+    max-width: 900px;
+}
+
+.tier-row {
+    display: flex;
+    margin-bottom: 10px;
+    min-height: 110px;
+    background-color: #353b48;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tier-label {
+    flex-shrink: 0;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.champion-portraits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.champion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.champion-card:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.champion-card img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+}
+
+.champion-name {
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.tier-s .tier-label { background-color: #e84118; }
+.tier-a .tier-label { background-color: #0097e6; }
+.tier-b .tier-label { background-color: #fbc531; }
+.tier-c .tier-label { background-color: #4cd137; }
+.tier-d .tier-label { background-color: #8c8c8c; }
+
+
+/* --- PÁGINA DE NOTÍCIA (ARTIGO) --- */
+.artigo-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+.artigo-imagem-principal {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.artigo-paragrafo {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.artigo-container h2 {
+    text-align: left;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.artigo-destaques {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.artigo-destaques li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #00f070;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.combinacao-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.combinacao-champ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.combinacao-champ img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.combinacao-plus {
+    font-size: 3em;
+    color: #888;
+}
+
+.golpes-secao h3 {
+    color: #555;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.golpes-lista {
+    list-style: none;
+    padding-left: 0;
+}
+
+.golpes-lista li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #0097e6;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.golpes-lista li strong {
+    color: #333;
+}
+
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE CAMPEÕES --- */
+body.champions-page, body.home-page {
+    background-color: #1a202c;
+}
+
+.champions-page h2, .champions-page p,
+.home-page h2 {
+    color: #e2e8f0;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE DUPLAS (TEMA JINX/VI) --- */
+body.teams-page {
+    background-color: #e0f2f7;
+}
+
+.teams-page h2, .teams-page p {
+    color: #1a202c;
+}
+
+.teams-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.teams-page .team-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 2px solid #00b8e6;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.teams-page .team-rank {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e6007a;
+    margin-right: 20px;
+}
+
+.teams-page .team-portraits {
+    display: flex;
+    margin-right: 20px;
+}
+
+.teams-page .team-portraits img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #e6007a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.teams-page .team-portraits img:first-child {
+    margin-right: -20px;
+    z-index: 1;
+}
+
+.teams-page .team-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.teams-page .team-composition {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+    text-align: left;
+    color: #1a202c;
+}
+
+.teams-page .team-fuse {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: #4a5568;
+    text-align: left;
+}
+
+.teams-page .team-explanation {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: left;
+    color: #4a5568;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE FUSES (TEMA ESCURO) --- */
+body.fuses-page-dark {
+    background-color: #1a202c;
+}
+
+.fuses-page-dark h2 {
+    color: #00f070;
+    text-shadow: 0 0 8px rgba(0, 240, 112, 0.5);
+}
+
+.fuses-page-dark p {
+    color: #e2e8f0;
+}
+
+.fuses-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.fuses-page-dark .fuse-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #2d3748;
+    border-radius: 8px;
+    padding: 0;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.fuses-page-dark .fuse-card:hover {
+    transform: translateY(-8px);
+    border-color: #00f070;
+    box-shadow: 0 10px 25px rgba(0, 240, 112, 0.2);
+}
+
+.fuses-page-dark .fuse-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid #4a5568;
+}
+
+.fuses-page-dark .fuse-info {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.fuses-page-dark .fuse-title {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #00f070;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fuses-page-dark .fuse-description {
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: left;
+    margin-top: 15px;
+    color: #cbd5e0;
+}
+
+.fuses-page-dark .fuse-bonus-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.fuses-page-dark .fuse-bonus-list li {
+    background-color: #1a202c;
+    padding: 10px;
+    border-left: 4px solid #00f070;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #e2e8f0;
+}
