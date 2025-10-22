@@ -186,12 +186,16 @@ main {
 }
 
 .noticia-box.background-rank {
-    background-image: url('assets/rank.avif');
+    background-image: url('assets/Rank.avif');
 }
 
-/* Fundo para a notícia do pack Arcane */
 .noticia-box.background-arcane {
-    background-image: url('assets/arcane-pack.jpeg'); /* <-- A CORREÇÃO ESTÁ AQUI */
+    background-image: url('assets/arcane-pack.jpeg');
+}
+
+/* NOVO: Fundo para a notícia do Treta Championship */
+.noticia-box.background-treta {
+    background-image: url('assets/treta.png');
 }
 
 
