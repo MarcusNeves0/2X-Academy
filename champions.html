@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tier List de Campeões - 2XAcademy</title>
+    <title>Ranking de Campeões - 2XAcademy</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/2xko-logo.png">
+    
+    <style>
+        /* --- ESTILO EXCLUSIVO DA TIER LIST --- */
+        .tierlist-container { 
+            width: 100%; 
+            max-width: 900px; 
+            margin-top: 20px;
+        }
+
+        .tier-row { 
+            display: flex; 
+            margin-bottom: 15px; 
+            background-color: #353b48; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            min-height: 110px;
+        }
+
+        .tier-label { 
+            flex-shrink: 0; 
+            width: 90px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-family: 'Russo One', sans-serif; 
+            font-size: 3em; 
+            font-weight: bold; 
+            color: white; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Cores dos Rankings */
+        .tier-s .tier-label { background-color: #e84118; }
+        .tier-a .tier-label { background-color: #0097e6; }
+        .tier-b .tier-label { background-color: #fbc531; }
+        .tier-c .tier-label { background-color: #4cd137; }
+        .tier-d .tier-label { background-color: #8c8c8c; }
+
+        .champion-portraits { 
+            display: flex; 
+            flex-wrap: wrap; 
+            padding: 15px; 
+            gap: 15px; 
+            align-items: center;
+        }
+
+        /* TRAVA DE TAMANHO DAS FOTOS */
+        .champion-card { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            width: 80px; 
+        }
+
+        .champion-card img { 
+            width: 80px; 
+            height: 80px; 
+            border: 2px solid white; 
+            border-radius: 8px; 
+            object-fit: cover;
+            background-color: #1a202c;
+        }
+
+        .champion-name {
+            font-size: 0.75em;
+            margin-top: 5px;
+            color: #e2e8f0;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
-<body class="champions-page">
+<body>
 
     <header>
         <h1>2XAcademy</h1>
@@ -21,86 +92,47 @@
 
     <main>
         <h2>Tier List de Campeões</h2>
-        <p>Ranking atualizado dos melhores personagens do 2XKO para o meta competitivo de 2026.</p>
-
+        
         <div class="tierlist-container">
             
             <div class="tier-row tier-s">
                 <div class="tier-label">S</div>
                 <div class="champion-portraits">
-                    <div class="champion-card">
-                        <img src="champs/yasuo.avif" alt="Yasuo">
-                        <span class="champion-name">Yasuo</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/teemo.avif" alt="Teemo">
-                        <span class="champion-name">Teemo</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/ahri.avif" alt="Ahri">
-                        <span class="champion-name">Ahri</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/vi.avif" alt="Vi">
-                        <span class="champion-name">Vi</span>
-                    </div>
+                    <div class="champion-card"><img src="champs/vi.avif"><div class="champion-name">Vi</div></div>
+                    <div class="champion-card"><img src="champs/caitlyn.avif"><div class="champion-name">Caitlyn</div></div>
+                    <div class="champion-card"><img src="champs/yasuo.avif"><div class="champion-name">Yasuo</div></div>
+                    <div class="champion-card"><img src="champs/jinx.avif"><div class="champion-name">Jinx</div></div>
                 </div>
             </div>
 
             <div class="tier-row tier-a">
                 <div class="tier-label">A</div>
                 <div class="champion-portraits">
-                    <div class="champion-card">
-                        <img src="champs/ekko.avif" alt="Ekko">
-                        <span class="champion-name">Ekko</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/jinx.avif" alt="Jinx">
-                        <span class="champion-name">Jinx</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/caitlyn.avif" alt="Caitlyn">
-                        <span class="champion-name">Caitlyn</span>
-                    </div>
+                    <div class="champion-card"><img src="champs/illaoi.avif"><div class="champion-name">Illaoi</div></div>
+                    <div class="champion-card"><img src="champs/ekko.avif"><div class="champion-name">Ekko</div></div>
+                    <div class="champion-card"><img src="champs/teemo.avif"><div class="champion-name">Teemo</div></div>
                 </div>
             </div>
 
             <div class="tier-row tier-b">
                 <div class="tier-label">B</div>
                 <div class="champion-portraits">
-                    <div class="champion-card">
-                        <img src="champs/illaoi.avif" alt="Illaoi">
-                        <span class="champion-name">Illaoi</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/darius.avif" alt="Darius">
-                        <span class="champion-name">Darius</span>
-                    </div>
-                    <div class="champion-card">
-                        <img src="champs/braum.avif" alt="Braum">
-                        <span class="champion-name">Braum</span>
-                    </div>
+                    <div class="champion-card"><img src="champs/braum.avif"><div class="champion-name">Braum</div></div>
+                    <div class="champion-card"><img src="champs/blitzcrank.avif"><div class="champion-name">Blitz</div></div>
                 </div>
             </div>
 
             <div class="tier-row tier-c">
                 <div class="tier-label">C</div>
                 <div class="champion-portraits">
-                    <div class="champion-card">
-                        <img src="champs/blitzcrank.avif" alt="Blitzcrank">
-                        <span class="champion-name">Blitzcrank</span>
-                    </div>
+                    <div class="champion-card"><img src="champs/ahri.avif"><div class="champion-name">Ahri</div></div>
                 </div>
             </div>
 
             <div class="tier-row tier-d">
                 <div class="tier-label">D</div>
                 <div class="champion-portraits">
-                    <div class="champion-card">
-                        <img src="champs/warwick.avif" alt="Warwick">
-                        <span class="champion-name">Warwick</span>
                     </div>
-                </div>
             </div>
 
         </div>

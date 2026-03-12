@@ -3,11 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2XAcademy</title>
+    <title>2XAcademy - Início</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/2xko-logo.png">
+    
+    <style>
+        /* --- ESTILO ESPECÍFICO DA HOME --- */
+        
+        .noticias-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            width: 100%; 
+            flex-wrap: wrap; 
+        }
+
+        .noticia-link { 
+            text-decoration: none; 
+            color: inherit; 
+            display: block; 
+        }
+
+        /* Notícias Quadradas (As 3 de cima) */
+        .noticia-box {
+            position: relative; 
+            width: 250px; 
+            height: 250px; 
+            border: 3px solid red;
+            background-size: cover; 
+            background-position: center; 
+            border-radius: 8px; 
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .noticia-box:hover { transform: scale(1.05); }
+
+        /* Notícias Retangulares (As 2 de baixo) */
+        .noticias-container-fullwidth { 
+            display: flex; 
+            justify-content: center; 
+            width: 100%; 
+            margin-top: 20px; 
+        }
+
+        .noticias-container-fullwidth .noticia-link {
+            width: 100%;
+            max-width: 790px;
+            height: 280px;
+        }
+
+        .noticia-box-rectangular {
+            width: 100%; 
+            height: 100%; 
+            border: 3px solid red; 
+            border-radius: 8px;
+            background-size: cover; 
+            background-position: center; 
+            position: relative; 
+            overflow: hidden;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+        /* Overlay e Textos */
+        .noticia-overlay { 
+            position: absolute; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background-color: rgba(0, 0, 0, 0.4); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .noticia-box h3, .noticia-box-rectangular h3 { 
+            color: white; 
+            text-align: center; 
+            font-size: 1.5em; 
+            padding: 10px; 
+            margin: 0;
+            font-family: 'Russo One', sans-serif;
+        }
+
+        /* Backgrounds das Imagens */
+        .background-caitlyn { background-image: url('champs/caitlyn.avif'); }
+        .background-rank { background-image: url('assets/rank.avif'); }
+        .background-ahri { background-image: url('champs/ahri.avif'); }
+        .background-battlepass { background-image: url('assets/battlepass1.jpeg'); }
+        .background-treta { background-image: url('assets/treta.png'); }
+    </style>
 </head>
-<body class="home-page">
+<body>
 
     <header>
         <h1>2XAcademy</h1>
@@ -21,48 +107,39 @@
 
     <main>
         <h2>Últimas Notícias</h2>
+        
         <div class="noticias-container">
             <a href="news/noticia-1.html" class="noticia-link">
                 <div class="noticia-box background-caitlyn">
-                    <div class="noticia-overlay">
-                        <h3>Nova campeã Caitlyn</h3>
-                    </div>
+                    <div class="noticia-overlay"><h3>Nova campeã Caitlyn</h3></div>
                 </div>
             </a>
             
             <a href="news/noticia-2.html" class="noticia-link">
                 <div class="noticia-box background-rank">
-                    <div class="noticia-overlay">
-                        <h3>Bem vindo a Rankeada</h3>
-                    </div>
+                    <div class="noticia-overlay"><h3>Bem vindo a Rankeada</h3></div>
                 </div>
             </a>
             
-            <a href="https://www.youtube.com/watch?v=xyK3lFtz2H8&list=RDxyK3lFtz2H8&start_radio=1" class="noticia-link" target="_blank">
+            <a href="https://www.youtube.com/watch?v=xyK3lFtz2H8&list=RDxyK3lFtz2H8&start_radio=1" target="_blank" class="noticia-link">
                 <div class="noticia-box background-ahri">
-                    <div class="noticia-overlay">
-                        <h3>2XKO Cinematic</h3>
-                    </div>
+                    <div class="noticia-overlay"><h3>2XKO Cinematic</h3></div>
                 </div>
             </a>
         </div>
 
         <div class="noticias-container-fullwidth">
              <a href="news/noticia-4.html" class="noticia-link">
-                <div class="noticia-box noticia-box-rectangular background-battlepass">
-                    <div class="noticia-overlay">
-                        <h3>Battle Pass: Progresso e Caos - Temporada 1</h3>
-                    </div>
+                <div class="noticia-box-rectangular background-battlepass">
+                    <div class="noticia-overlay"><h3>Battle Pass: Progresso e Caos</h3></div>
                 </div>
             </a>
         </div>
 
         <div class="noticias-container-fullwidth"> 
             <a href="news/noticia-5.html" class="noticia-link">
-                <div class="noticia-box noticia-box-rectangular background-treta">
-                    <div class="noticia-overlay">
-                        <h3>Treta Championship 2025: O Major de 2XKO!</h3>
-                    </div>
+                <div class="noticia-box-rectangular background-treta">
+                    <div class="noticia-overlay"><h3>Treta Championship 2026</h3></div>
                 </div>
             </a>
         </div>

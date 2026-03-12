@@ -3,11 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melhores Duplas (Tier List) - 2XAcademy</title>
+    <title>Melhores Duplas - 2XAcademy</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/2xko-logo.png">
+    
+    <style>
+        /* --- ESTILO EXCLUSIVO DAS DUPLAS --- */
+        .tierlist-container { 
+            width: 100%; 
+            max-width: 1100px; 
+            margin-top: 20px;
+        }
+
+        .tier-row-teams { 
+            display: flex; 
+            margin-bottom: 30px; 
+            background-color: #353b48; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            width: 100%; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Lado esquerdo: Letra do Rank */
+        .tier-label-box { 
+            width: 120px; 
+            flex-shrink: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-family: 'Russo One', sans-serif; 
+            font-size: 5em; 
+            color: white; 
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .tier-s { background-color: #e84118; }
+        .tier-a { background-color: #0097e6; }
+        .tier-b { background-color: #fbc531; }
+
+        /* Lado direito: Grid de Duplas */
+        .tier-content-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 20px; 
+            padding: 25px; 
+            flex-grow: 1; 
+            background-color: #2d3748;
+        }
+
+        /* Card da Dupla */
+        .team-card { 
+            background-color: #1a202c; 
+            border-radius: 10px; 
+            padding: 20px; 
+            width: 100%;
+            max-width: 280px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            border: 2px solid #4a5568; 
+            transition: transform 0.2s ease;
+        }
+        .team-card:hover { transform: translateY(-5px); border-color: #00f070; }
+
+        .team-portraits { display: flex; justify-content: center; margin-bottom: 15px; }
+        .team-portraits img { width: 85px; height: 85px; border-radius: 50%; border: 4px solid #1a202c; object-fit: cover; }
+        .team-portraits img:first-child { margin-right: -25px; z-index: 2; }
+
+        .team-composition { 
+            color: #00f070; font-size: 1.4em; margin: 5px 0; 
+            font-weight: bold; font-family: 'Russo One', sans-serif; text-align: center;
+        }
+
+        .team-fuse { 
+            color: #e6007a; font-weight: bold; text-transform: uppercase; 
+            font-size: 0.85em; letter-spacing: 1px; margin-bottom: 10px;
+        }
+
+        .team-synergy {
+            color: #cbd5e0; font-size: 0.9em; text-align: center; line-height: 1.4;
+            border-top: 1px solid #4a5568; padding-top: 10px; margin-top: 5px;
+        }
+    </style>
 </head>
-<body class="teams-page">
+<body>
 
     <header>
         <h1>2XAcademy</h1>
@@ -20,73 +99,30 @@
     </header>
 
     <main>
-        <h2>Tier List de Duplas</h2>
-        <p>As combinações mais fortes do meta atual, organizadas por nível de poder.</p>
-
-        <div class="teams-container-visual">
+        <h2>Análise de Sinergia das Duplas</h2>
+        
+        <div class="tierlist-container">
             
             <div class="tier-row-teams">
                 <div class="tier-label-box tier-s">S</div>
                 <div class="tier-content-grid">
-                    
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/caitlyn.avif" alt="Caitlyn">
-                            <img src="champs/vi.avif" alt="Vi">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Caitlyn + Vi</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> 2x Assist</p>
-                            <p class="team-explanation">Sinergia máxima. Caitlyn prepara o terreno com armadilhas enquanto Vi avança. O 2x Assist permite combos de Headshot estendidos.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/caitlyn.avif"><img src="champs/vi.avif"></div>
+                        <div class="team-composition">Caitlyn + Vi</div>
+                        <div class="team-fuse">Double Down</div>
+                        <div class="team-synergy">Pressão de longo alcance com Caitlyn e punição pesada com Vi. Atualmente a dupla mais equilibrada.</div>
                     </div>
-
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/vi.avif" alt="Vi">
-                            <img src="champs/jinx.avif" alt="Jinx">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Vi + Jinx</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> Double Down</p>
-                            <p class="team-explanation">O "Meta de Arcane". Vi quebra a defesa e Jinx finaliza. Com Vi no Rank S, o potencial de K.O. desta dupla é absurdo.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/yasuo.avif"><img src="champs/jinx.avif"></div>
+                        <div class="team-composition">Yasuo + Jinx</div>
+                        <div class="team-fuse">Freestyle</div>
+                        <div class="team-synergy">Combo focado em dano bruto e mix-ups rápidos. Yasuo protege a Jinx enquanto ela prepara o caos.</div>
                     </div>
-
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/yasuo.avif" alt="Yasuo">
-                            <img src="champs/ekko.avif" alt="Ekko">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Yasuo + Ekko</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> Freestyle</p>
-                            <p class="team-explanation">O time mais clássico e forte. Mixups impossíveis com o Ekko voltando no tempo e Yasuo dominando o ar.</p>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/yasuo.avif" alt="Yasuo">
-                            <img src="champs/jinx.avif" alt="Jinx">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Yasuo + Jinx</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> Freestyle</p>
-                            <p class="team-explanation">Controle total. Yasuo mantém os oponentes longe com furacões enquanto Jinx atira. Trocas rápidas punem qualquer erro.</p>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/ahri.avif" alt="Ahri">
-                            <img src="champs/ekko.avif" alt="Ekko">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Ahri + Ekko</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> 2x Assist</p>
-                            <p class="team-explanation">Mobilidade infinita. Ahri controla o ar e Ekko o chão, criando pressão constante em todos os ângulos.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/vi.avif"><img src="champs/yasuo.avif"></div>
+                        <div class="team-composition">Vi + Yasuo</div>
+                        <div class="team-fuse">Freestyle</div>
+                        <div class="team-synergy">Agressividade pura. Vi inicia o combate e Yasuo aproveita o tempo de stun para derreter a vida do oponente.</div>
                     </div>
                 </div>
             </div>
@@ -95,39 +131,22 @@
                 <div class="tier-label-box tier-a">A</div>
                 <div class="tier-content-grid">
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/darius.avif" alt="Darius">
-                            <img src="champs/ekko.avif" alt="Ekko">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Darius + Ekko</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> 2x Assist</p>
-                            <p class="team-explanation">Dano pesado do Darius protegido pela segurança do rebobinar do Ekko.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/ekko.avif"><img src="champs/ahri.avif"></div>
+                        <div class="team-composition">Ekko + Ahri</div>
+                        <div class="team-fuse">2X Assist</div>
+                        <div class="team-synergy">Dupla focada em mobilidade. Ahri atrai o inimigo com o charme para o Ekko entrar com combos temporais.</div>
                     </div>
-
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/vi.avif" alt="Vi">
-                            <img src="champs/warwick.avif" alt="Warwick">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Vi + Warwick</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> Freestyle</p>
-                            <p class="team-explanation">Pressão absoluta no canto. Brawlers que quebram a defesa na força bruta.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/illaoi.avif"><img src="champs/braum.avif"></div>
+                        <div class="team-composition">Illaoi + Braum</div>
+                        <div class="team-fuse">Juggernaut</div>
+                        <div class="team-synergy">Controle de espaço total. Braum impede o avanço inimigo enquanto os tentáculos da Illaoi fazem o trabalho sujo.</div>
                     </div>
-
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/blitzcrank.avif" alt="Blitzcrank">
-                            <img src="champs/ekko.avif" alt="Ekko">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Blitzcrank + Ekko</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> Freestyle</p>
-                            <p class="team-explanation">Especialistas em "restand". Oponente não toca no chão até o K.O.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/teemo.avif"><img src="champs/ekko.avif"></div>
+                        <div class="team-composition">Teemo + Ekko</div>
+                        <div class="team-fuse">Sidekick</div>
+                        <div class="team-synergy">Estratégia baseada em cansaço. Teemo envenena e Ekko usa sua velocidade para entrar e sair sem ser tocado.</div>
                     </div>
                 </div>
             </div>
@@ -136,27 +155,16 @@
                 <div class="tier-label-box tier-b">B</div>
                 <div class="tier-content-grid">
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/teemo.avif" alt="Teemo">
-                            <img src="champs/yasuo.avif" alt="Yasuo">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Teemo + Yasuo</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> 2x Assist</p>
-                            <p class="team-explanation">Time de controle chato de lidar. Vento do Yasuo empurra para os cogumelos.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/teemo.avif"><img src="champs/blitzcrank.avif"></div>
+                        <div class="team-composition">Teemo + Blitz</div>
+                        <div class="team-fuse">Sidekick</div>
+                        <div class="team-synergy">O combo do "Puxão Venenoso". Blitz puxa os alvos diretamente para cima dos cogumelos e traps do Teemo.</div>
                     </div>
-
                     <div class="team-card">
-                        <div class="team-portraits">
-                            <img src="champs/braum.avif" alt="Braum">
-                            <img src="champs/illaoi.avif" alt="Illaoi">
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-composition">Braum + Illaoi</h3>
-                            <p class="team-fuse"><strong>Fuse:</strong> 2x Assist</p>
-                            <p class="team-explanation">A muralha. Braum defende enquanto Illaoi prepara os tentáculos.</p>
-                        </div>
+                        <div class="team-portraits"><img src="champs/braum.avif"><img src="champs/jinx.avif"></div>
+                        <div class="team-composition">Braum + Jinx</div>
+                        <div class="team-fuse">Double Down</div>
+                        <div class="team-synergy">Proteção máxima para o carry. Braum serve de escudo humano para que Jinx possa disparar livremente.</div>
                     </div>
                 </div>
             </div>

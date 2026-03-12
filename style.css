@@ -1,35 +1,16 @@
-/* style.css - VERSÃO FINAL BLINDADA */
-
-/* 1. IMPORTAÇÃO DA FONTE Russo One */
+/* style.css - DNA GLOBAL DO SITE */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-/* --- CONFIGURAÇÕES GERAIS --- */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f2f5; 
-}
-
-/* --- TEMA ESCURO UNIFICADO --- */
-body.home-page,
-body.champions-page,
-body.teams-page,
-body.fuses-page-dark {
-    background-color: #1a202c; 
-    color: #e2e8f0; 
-}
-
-.home-page h2, .home-page p,
-.champions-page h2, .champions-page p,
-.teams-page h2, .teams-page p,
-.fuses-page-dark h2, .fuses-page-dark p {
+    background-color: #1a202c; /* Fundo escuro oficial */
     color: #e2e8f0;
 }
 
-/* --- CABEÇALHO --- */
 header {
     width: 100%;
     background-color: white;
@@ -45,151 +26,31 @@ header {
 header h1 {
     font-family: 'Russo One', sans-serif;
     font-size: 3.5em;
-    letter-spacing: 2px;
-    margin: 0;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
     color: #1a202c;
     text-shadow: -2px -2px 0 #00f070, 2px -2px 0 #00f070, -2px 2px 0 #00f070, 2px 2px 0 #00f070;
 }
 
-.navegacao { display: flex; justify-content: center; gap: 15px; }
+.navegacao { display: flex; gap: 15px; }
+
 .nav-botao {
-    display: inline-block; background-color: black; color: white; padding: 12px 25px;
-    border: 2px solid black; text-decoration: none; font-weight: bold; border-radius: 5px;
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border: 2px solid black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
     transition: 0.3s;
 }
+
 .nav-botao:hover { background-color: white; color: black; }
 
-/* --- CONTEÚDO PRINCIPAL --- */
-main { width: 100%; max-width: 1200px; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; position: relative; z-index: 10; }
-
-/* --- SEÇÃO DE NOTÍCIAS (HOME) --- */
-.noticias-container { display: flex; justify-content: center; gap: 20px; width: 100%; flex-wrap: wrap; }
-
-.noticia-box {
-    position: relative; 
-    width: 250px; 
-    height: 250px; 
-    border: 3px solid red;
-    background-size: cover; 
-    background-position: center;
-    display: flex; 
-    justify-content: center; 
+main {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    transition: transform 0.2s ease-in-out; 
-    overflow: hidden; 
-    border-radius: 8px;
 }
-
-/* CORREÇÃO PARA NOTÍCIAS RETANGULARES (image_8b7aa3.jpg) */
-.noticia-box-rectangular {
-    width: 100% !important; 
-    height: 250px !important; /* Altura igual às de cima para alinhar */
-}
-
-.noticias-container-fullwidth { 
-    display: flex; 
-    justify-content: center; 
-    width: 100%; 
-    max-width: 790px; 
-    margin-top: 20px; 
-}
-
-.noticia-link { text-decoration: none; color: inherit; width: auto; }
-.noticias-container-fullwidth .noticia-link { width: 100%; }
-
-.noticia-overlay { 
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    background-color: rgba(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center; z-index: 1; 
-}
-
-.noticia-box h3 { position: relative; z-index: 2; color: white; font-size: 1.5em; margin: 15px; text-align: center; }
-
-/* FUNDOS DAS NOTÍCIAS */
-.noticia-box.background-caitlyn { background-image: url('champs/caitlyn.avif'); }
-.noticia-box.background-ahri { background-image: url('champs/ahri.avif'); }
-.noticia-box.background-rank { background-image: url('assets/rank.avif'); }
-.noticia-box.background-battlepass { background-image: url('assets/battlepass1.jpeg'); }
-.noticia-box.background-treta { background-image: url('assets/treta.png'); }
-
-/* --- TIER LIST (CAMPEÕES E DUPLAS) - BLINDAGEM DE CORES --- */
-.tierlist-container { width: 100%; max-width: 900px; }
-.tier-row, .tier-row-teams { display: flex; margin-bottom: 15px; background-color: #353b48; border-radius: 8px; overflow: hidden; border: none; }
-
-/* Estilo Base do Rótulo Lateral */
-.tier-label, .tier-label-box { 
-    flex-shrink: 0; 
-    width: 90px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-family: 'Russo One', sans-serif; 
-    font-size: 3em; 
-    font-weight: bold; 
-    color: white; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* SELETORES ULTRA-ESPECÍFICOS PARA AS CORES (Garantia total) */
-/* Tier S */
-.tier-row.tier-s .tier-label, 
-.tier-s.tier-label-box,
-.tier-label-box.tier-s { 
-    background-color: #e84118 !important; 
-}
-
-/* Tier A */
-.tier-row.tier-a .tier-label, 
-.tier-a.tier-label-box,
-.tier-label-box.tier-a { 
-    background-color: #0097e6 !important; 
-}
-
-/* Tier B */
-.tier-row.tier-b .tier-label, 
-.tier-b.tier-label-box,
-.tier-label-box.tier-b { 
-    background-color: #fbc531 !important; 
-}
-
-/* Tiers C e D */
-.tier-row.tier-c .tier-label { background-color: #4cd137 !important; }
-.tier-row.tier-d .tier-label { background-color: #8c8c8c !important; }
-
-/* Estilo das Fotos */
-.champion-portraits { display: flex; flex-wrap: wrap; padding: 10px; gap: 10px; }
-.champion-card { display: flex; flex-direction: column; align-items: center; width: 90px; }
-.champion-card img { width: 80px; height: 80px; border: 2px solid #fff; border-radius: 8px; }
-
-/* Duplas */
-.tier-row-teams { min-height: 200px; }
-.tier-label-box { width: 100px; font-size: 5em; }
-.tier-content-grid { flex-grow: 1; padding: 20px; display: flex; flex-wrap: wrap; gap: 15px; }
-.teams-page .team-card { 
-    background-color: #2d3748; border-radius: 8px; padding: 15px; width: 300px; 
-    display: flex; flex-direction: column; align-items: center; border: 1px solid #4a5568; 
-    flex-grow: 1; max-width: 350px; 
-}
-.teams-page .team-portraits img { width: 70px; height: 70px; border-radius: 50%; border: 3px solid #1a202c; }
-
-/* --- PÁGINA DE FUSES (ÍCONE NA ESQUERDA) --- */
-.fuses-container { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 900px; }
-.fuses-page-dark .fuse-card { 
-    display: flex; flex-direction: row; align-items: center; 
-    background-color: #2d3748; border-radius: 12px; padding: 20px; 
-    border: 1px solid #4a5568; transition: 0.2s; 
-}
-.fuses-page-dark .fuse-card:hover { transform: translateX(10px); border-color: #00f070; }
-.fuse-icon-64 { 
-    width: 64px; height: 64px; flex-shrink: 0; margin-right: 25px; 
-    border-radius: 8px; border: 2px solid #00f070; background-color: #1a202c; 
-}
-.fuses-page-dark .fuse-info { display: flex; flex-direction: column; text-align: left; }
-.fuses-page-dark .fuse-title { margin: 0; font-size: 1.5em; color: #00f070; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
-.fuses-page-dark .fuse-description { margin-top: 8px; font-size: 1em; color: #cbd5e0; line-height: 1.5; }
-
-/* --- PÁGINA DE ARTIGOS --- */
-.artigo-container { width: 100%; max-width: 800px; padding: 30px; background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); box-sizing: border-box; }
-.artigo-container h1, .artigo-container h2, .artigo-container p { color: #333; }
-.artigo-imagem-principal { width: 100%; border-radius: 8px; margin-bottom: 20px; }
-.artigo-paragrafo { font-size: 1.1em; line-height: 1.6; text-align: left; color: #555; }

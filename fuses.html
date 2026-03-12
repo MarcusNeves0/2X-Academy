@@ -2,13 +2,18 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuses - O Coração do Sistema - 2XAcademy</title>
+    <title>Guia de Fuses - 2XAcademy</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/2xko-logo.png">
+    <style>
+        .fuses-container { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 900px; }
+        .fuse-card { display: flex; flex-direction: row; align-items: center; background-color: #2d3748; border-radius: 12px; padding: 20px; border: 1px solid #4a5568; }
+        .fuse-icon-64 { width: 64px; height: 64px; flex-shrink: 0; margin-right: 25px; border-radius: 8px; border: 2px solid #00f070; }
+        .fuse-info { display: flex; flex-direction: column; text-align: left; }
+        .fuse-title { margin: 0; font-size: 1.5em; color: #00f070; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
+        .fuse-description { color: #cbd5e0; margin-top: 5px; line-height: 1.4; }
+    </style>
 </head>
-<body class="fuses-page-dark">
-
+<body>
     <header>
         <h1>2XAcademy</h1>
         <nav class="navegacao">
@@ -18,55 +23,15 @@
             <a href="fuses.html" class="nav-botao">Fuses</a>
         </nav>
     </header>
-
     <main>
         <h2>Guia de Fuses (Oficial)</h2>
-        <p>Entenda a mecânica de Fuse, a habilidade de equipe que define a sinergia da sua dupla e seu plano de jogo.</p>
-
         <div class="fuses-container">
-            
-            <div class="fuse-card">
-                <img src="assets/2xassist.png" alt="Fuse 2X Assist" class="fuse-icon-64">
-                <div class="fuse-info">
-                    <h3 class="fuse-title">2X Assist</h3>
-                    <p class="fuse-description">Permite realizar duas ações de assistência consecutivas. Ao usar a maioria dos outros estilos, chamar sua assistência faz com que eles executem a ação e pronto. Com 2X Assist, você pode repetir ou continuar com um dash assist.</p>
-                </div>
-            </div>
-
-            <div class="fuse-card">
-                <img src="assets/doubledown.png" alt="Fuse Double Down" class="fuse-icon-64">
-                <div class="fuse-info">
-                    <h3 class="fuse-title">Double Down</h3>
-                    <p class="fuse-description">Permite combinar os Ultimate Moves de ambos os personagens. Focado em finalizar o oponente com dano massivo acumulado quando os dois Supers são disparados em sequência.</p>
-                </div>
-            </div>
-
-            <div class="fuse-card">
-                <img src="assets/freestyle.png" alt="Fuse Freestyle" class="fuse-icon-64">
-                <div class="fuse-info">
-                    <h3 class="fuse-title">Freestyle</h3>
-                    <p class="fuse-description">Habilita o Handshake Tag avançado. Você pode trocar de personagem livremente durante combos, permitindo mix-ups agressivos e uma pressão constante que sufoca o adversário.</p>
-                </div>
-            </div>
-
-            <div class="fuse-card">
-                <img src="assets/juggernaut.png" alt="Fuse Juggernaut" class="fuse-icon-64">
-                <div class="fuse-info">
-                    <h3 class="fuse-title">Juggernaut</h3>
-                    <p class="fuse-description">O Fuse focado em defesa e força bruta. Concede super armadura a ataques pesados selecionados, permitindo absorver dano e continuar a ofensiva sem ser interrompido.</p>
-                </div>
-            </div>
-
-            <div class="fuse-card">
-                <img src="assets/sidekick.png" alt="Fuse Sidekick" class="fuse-icon-64">
-                <div class="fuse-info">
-                    <h3 class="fuse-title">Sidekick</h3>
-                    <p class="fuse-description">Melhora a regeneração da vida "azul" (recuperável) do personagem que está no banco. É o Fuse ideal para quem joga de forma estratégica e busca comebacks sustentáveis.</p>
-                </div>
-            </div>
-
+            <div class="fuse-card"><img src="assets/2xassist.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">2X Assist</h3><p class="fuse-description">Permite realizar duas ações de assistência consecutivas.</p></div></div>
+            <div class="fuse-card"><img src="assets/doubledown.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Double Down</h3><p class="fuse-description">Permite combinar os Ultimate Moves de ambos os personagens.</p></div></div>
+            <div class="fuse-card"><img src="assets/freestyle.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Freestyle</h3><p class="fuse-description">Habilita trocas livres durante os combos, inclusive no ar.</p></div></div>
+            <div class="fuse-card"><img src="assets/juggernaut.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Juggernaut</h3><p class="fuse-description">Concede armadura em ataques pesados e regenera barra de Burst.</p></div></div>
+            <div class="fuse-card"><img src="assets/sidekick.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Sidekick</h3><p class="fuse-description">Melhora a regeneração da vida recuperável na reserva.</p></div></div>
         </div>
     </main>
-
 </body>
 </html>
