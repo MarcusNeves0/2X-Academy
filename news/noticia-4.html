@@ -5,7 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Battle Pass: Progresso e Caos - 2XAcademy</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/png" href="../assets/2xko-logo.png">
+    
+    <style>
+        /* --- ESTILO NEUTRO PARA PÁGINA DE ARTIGO --- */
+        .artigo-container { 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 40px; 
+            background-color: #2d3748; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+            color: #e2e8f0; 
+            box-sizing: border-box;
+            border: 1px solid #4a5568;
+        }
+
+        .artigo-container h1 { font-family: 'Russo One', sans-serif; font-size: 2.5em; margin-bottom: 10px; color: #fff; }
+        .artigo-container h2 { border-bottom: 3px solid #ff9d00; display: inline-block; padding-bottom: 5px; margin-top: 30px; color: #ff9d00; }
+        .artigo-container p { line-height: 1.6; font-size: 1.1em; text-align: left; color: #cbd5e0; }
+
+        .artigo-imagem-principal { 
+            width: 100%; 
+            max-height: 450px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 25px; 
+            border: 2px solid #4a5568;
+        }
+
+        /* DESTAQUE DA SKIN */
+        .skin-destaque {
+            background-color: #1a202c;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 2px solid #ff9d00;
+            text-align: center;
+        }
+        .skin-destaque img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .skin-destaque h3 { color: #ff9d00; margin: 0; font-family: 'Russo One', sans-serif; }
+
+        /* TABELA DE RECOMPENSAS */
+        .tabela-passe {
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0; 
+            background-color: #1a202c; 
+            border-radius: 8px; 
+            overflow: hidden;
+        }
+        .tabela-passe th, .tabela-passe td { padding: 12px; text-align: left; border-bottom: 1px solid #353b48; }
+        .tabela-passe th { background-color: #4a5568; color: #ff9d00; }
+
+        .tag-categoria { background: #ff9d00; color: #1a202c; padding: 5px 12px; border-radius: 5px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; }
+        
+        .dica-box {
+            background-color: #2d3748;
+            padding: 15px;
+            border-left: 5px solid #00f070;
+            margin: 20px 0;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,26 +88,57 @@
 
     <main>
         <div class="artigo-container">
+            <span class="tag-categoria">Temporada 1</span>
             <h1>Passe de Batalha: Progresso e Caos</h1>
+            <p>A primeira temporada oficial de 2XKO chegou trazendo a temática de Arcane. Com 50 níveis de recompensas, o passe "Progresso e Caos" oferece desde cosméticos simples até skins lendárias.</p>
             
-            <img class="artigo-imagem-principal" src="../assets/battlepass1.jpeg" alt="Banner do Passe de Batalha">
+            <img class="artigo-imagem-principal" src="../assets/battlepass1.jpeg" alt="Battle Pass 2XKO">
 
-            <p class="artigo-paragrafo">A Temporada 1 de 2XKO começa com o pé no acelerador com o lançamento do Passe de Batalha <strong>"Progresso e Caos"</strong>. Com 50 níveis de recompensas, o passe é totalmente focado no conflito entre Piltover e Zaun, trazendo itens cosméticos que mudam completamente a experiência das lutas.</p>
+            <h2>Como funciona o Progresso?</h2>
+            <p>Você ganha XP do Passe ao completar partidas (vencendo ou perdendo) e, principalmente, através das <strong>Missões Diárias e Semanais</strong>. O passe possui uma trilha Grátis e uma trilha Premium, que pode ser adquirida na loja.</p>
+
+            <div class="skin-destaque">
+                <img src="../assets/arcanecaitlyn.jpg" alt="Caitlyn Arcane Skin">
+                <h3>Recompensa Máxima: Caitlyn Arcane</h3>
+                <p>Disponível no nível 50 da trilha Premium, esta skin muda completamente os efeitos visuais dos tiros e armadilhas da Xerife.</p>
+            </div>
+
+            <h2>Conteúdo em Destaque</h2>
+            <p>Além das skins, o passe introduz novos efeitos de "Burst" e adesivos para comunicação rápida durante as lutas.</p>
             
-            <h2>Destaque da Temporada: Caitlyn Arcane</h2>
-            <p class="artigo-paragrafo">A recompensa máxima do nível 50 é a skin lendária <strong>Caitlyn Arcane</strong>. Esta skin não muda apenas o visual da Xerife, mas também adiciona novos efeitos de partículas em seus tiros carregados e uma animação de vitória exclusiva inspirada na série.</p>
-            
-            <img class="artigo-imagem-principal" src="../assets/arcanecaitlyn.jpg" alt="Skin Caitlyn Arcane">
+            <table class="tabela-passe">
+                <thead>
+                    <tr>
+                        <th>Nível</th>
+                        <th>Recompensa Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Acesso Antecipado: Nova Fuse "Sidekick"</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Emote Animado: Ekko "Pensativo"</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>Skin: Vi Defensora de Piltover</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>Skin Lendária: Caitlyn Arcane</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h2>O que vem no Passe?</h2>
-            <ul class="artigo-destaques">
-                <li><strong>Skins Exclusivas:</strong> Além da Caitlyn, o passe conta com variações de cores para Vi e Ekko.</li>
-                <li><strong>Efeitos de K.O.:</strong> Novos efeitos visuais que aparecem na tela ao finalizar o oponente com um golpe especial.</li>
-                <li><strong>Cromatização de Arena:</strong> Pela primeira vez, você pode desbloquear banners para personalizar o fundo dos cenários.</li>
-                <li><strong>Emotes e Ícones:</strong> Diversas formas de interagir e provocar seus oponentes durante as partidas online.</li>
-            </ul>
+            <h2>Dicas para Upar Rápido</h2>
+            <div class="dica-box">
+                "Não ignore as missões semanais! Elas acumulam e oferecem até 5x mais XP do que as partidas comuns. Focar nelas é o segredo para chegar ao nível 50 sem precisar jogar 8 horas por dia."
+            </div>
 
-            <p class="artigo-paragrafo">O passe possui uma trilha gratuita, mas os itens premium (incluindo a skin da Caitlyn) exigem a compra do acesso completo na loja in-game por 1000 Moedas de Jogo.</p>
+            <p>O Passe de Batalha: Progresso e Caos ficará disponível pelos próximos 90 dias. Boa sorte na subida!</p>
         </div>
     </main>
 

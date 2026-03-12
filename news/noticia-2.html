@@ -3,14 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem vindo a Rankeada - 2X Academy</title>
-    <link rel="icon" type="image/png" href="../assets/2xko-logo.png">
+    <title>Sistema de Rankeadas - 2XAcademy</title>
     <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .artigo-container { 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 40px; 
+            background-color: #2d3748; 
+            border-radius: 12px; 
+            margin: 20px 0; 
+            color: #e2e8f0; 
+            box-sizing: border-box;
+            border: 1px solid #4a5568;
+        }
+
+        .artigo-container h1 { font-family: 'Russo One', sans-serif; font-size: 2.5em; margin-bottom: 10px; color: #fff; }
+        .artigo-container h2 { border-bottom: 3px solid #00f070; display: inline-block; padding-bottom: 5px; margin-top: 30px; color: #00f070; }
+        .artigo-container p { line-height: 1.6; font-size: 1.1em; text-align: left; color: #cbd5e0; }
+
+        .artigo-imagem-principal { 
+            width: 100%; max-height: 450px; object-fit: cover; 
+            border-radius: 8px; margin-bottom: 25px; border: 2px solid #4a5568;
+        }
+
+        .elos-lista { padding: 0; }
+        .elos-lista li { 
+            display: flex; align-items: center; background-color: #353b48; 
+            padding: 15px; border-left: 5px solid #00f070; margin-bottom: 10px; 
+            list-style: none; font-weight: bold;
+        }
+
+        .elos-lista strong { color: #00f070; margin-right: 10px; font-size: 1.2em; }
+
+        .tag-categoria { background: #0097e6; color: white; padding: 5px 12px; border-radius: 5px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; }
+        
+        .destaque-box {
+            background-color: #1a202c; padding: 20px; border-radius: 10px;
+            border-left: 5px solid #fbc531; margin: 25px 0;
+        }
+
+        /* TABELA DE RECOMPENSAS */
+        .tabela-recompensas {
+            width: 100%; border-collapse: collapse; margin-top: 15px; background-color: #1a202c; border-radius: 8px; overflow: hidden;
+        }
+        .tabela-recompensas th, .tabela-recompensas td {
+            padding: 12px; text-align: left; border-bottom: 1px solid #353b48;
+        }
+        .tabela-recompensas th { background-color: #4a5568; color: #00f070; }
+    </style>
 </head>
 <body>
 
     <header>
-        <h1>2X Academy</h1>
+        <h1>2XAcademy</h1>
         <nav class="navegacao">
             <a href="../index.html" class="nav-botao">Início</a>
             <a href="../champions.html" class="nav-botao">Campeões</a>
@@ -21,20 +68,67 @@
 
     <main>
         <div class="artigo-container">
-            <h1>Bem vindo a Rankeada: Onde Lendas são Forjadas</h1>
+            <span class="tag-categoria">Competitivo</span>
+            <h1>Bem-vindo às Partidas Rankeadas: O Caminho para o Topo</h1>
+            <p>O modo competitivo de 2XKO finalmente está entre nós. Prepare-se para subir a escada das Rankeadas e garantir seu lugar entre as lendas.</p>
             
-            <img class="artigo-imagem-principal" src="../assets/rank.avif" alt="Símbolo do modo ranqueado de 2XKO">
+            <img class="artigo-imagem-principal" src="../assets/rank.avif" alt="Sistema de Rank 2XKO">
 
-            <p class="artigo-paragrafo">Você treinou seus combos, dominou seu campeão principal e encontrou a dupla perfeita. Agora, um novo desafio o aguarda. As portas para as partidas ranqueadas de 2XKO estão abertas, e é aqui que sua jornada para se tornar uma lenda verdadeiramente começa.</p>
-            
-            <p class="artigo-paragrafo">Mais do que apenas vitórias e derrotas, o modo ranqueado é a prova definitiva de habilidade, estratégia e resiliência. Cada partida é uma lição, cada oponente um professor. É a arena onde você medirá sua força contra os melhores, subindo degrau por degrau, desde os ranques iniciais até o ápice da competição.</p>
+            <h2>Como funciona o Sistema?</h2>
+            <p>As partidas são Melhor de 3 (Bo3). Vitórias dão LP e derrotas retiram. Ao chegar em 100 LP, você disputa a Série de Promoção.</p>
 
-            <h2 style="text-align: center; border: none;">Encare o Desafio</h2>
+            <div class="destaque-box">
+                <h3 style="color: #fbc531; margin-top: 0;">Dica de Ouro</h3>
+                <p style="margin-bottom: 0;">Sua "Habilidade Oculta" (MMR) determina quantos pontos você ganha. Se você vencer jogadores de elos mais altos, seu LP subirá muito mais rápido!</p>
+            </div>
+
+            <h2>Os Elos do 2XKO</h2>
+            <ul class="elos-lista">
+                <li><strong>Ferro/Bronze:</strong> Aprendizado.</li>
+                <li><strong>Prata/Ouro:</strong> Domínio de combos básicos.</li>
+                <li><strong>Platina/Esmeralda:</strong> O meta de assistências.</li>
+                <li><strong>Diamante/Mestre:</strong> Alta performance técnica.</li>
+                <li><strong>Desafiante:</strong> O Top 200 do servidor.</li>
+            </ul>
+
+            <h2>O Rank Reset e as Temporadas</h2>
+            <p>As temporadas em 2XKO duram <strong>3 meses</strong>. Ao final de cada ciclo, ocorre o <strong>Soft Reset</strong>. Diferente de um reset total, ele leva em conta seu desempenho anterior para que você não precise começar do zero absoluto.</p>
+
+            <h3>1. Partidas de Colocação (Placements)</h3>
+            <p>No início da nova temporada, você jogará <strong>5 partidas de colocação</strong>. Elas têm um peso muito maior no seu novo elo. Se você terminou a temporada passada no Ouro e vencer as 5, poderá começar já no Prata I ou Ouro IV.</p>
+
+            <h3>2. Recompensas por Elo</h3>
+            <p>Seu esforço será recompensado! Dependendo do elo mais alto que você atingiu (e não onde você terminou), você receberá itens cosméticos exclusivos:</p>
             
-            <p class="artigo-paragrafo">Não tema a derrota, pois ela é o caminho para o aprimoramento. Abrace a competição, pois ela te forçará a evoluir. O modo ranqueado não é apenas sobre provar que você é bom; é sobre se tornar melhor a cada dia.</p>
-            
-            <p class="artigo-paragrafo">Então, respire fundo, escolha sua dupla e entre na fila. O palco está montado. Mostre a todos do que você é feito. Sua escalada começa agora!</p>
-            
+            <table class="tabela-recompensas">
+                <thead>
+                    <tr>
+                        <th>Elo Atingido</th>
+                        <th>Recompensa de Temporada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ouro ou +</td>
+                        <td>Skin de Campeão "Vitoriosa"</td>
+                    </tr>
+                    <tr>
+                        <td>Platina ou +</td>
+                        <td>Borda de Tela de Carregamento Exclusiva</td>
+                    </tr>
+                    <tr>
+                        <td>Diamante ou +</td>
+                        <td>Efeito de Nocaute (KO) Personalizado</td>
+                    </tr>
+                    <tr>
+                        <td>Desafiante</td>
+                        <td>Título de "Lenda de Runeterra" e Ícone Animado</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>3. Integridade Competitiva</h3>
+            <p>O reset também serve para limpar contas inativas do topo da tabela, garantindo que o elo <strong>Desafiante</strong> seja ocupado apenas por quem está jogando e evoluindo constantemente no meta atual.</p>
         </div>
     </main>
 

@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova campeã Caitlyn - 2XAcademy</title>
+    <title>Caitlyn em 2XKO - 2XAcademy</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/png" href="../assets/2xko-logo.png">
+    
+    <style>
+        /* --- ESTILO NEUTRO PARA PÁGINA DE ARTIGO --- */
+        
+        .artigo-container { 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 40px; 
+            background-color: #2d3748; /* Cinza azulado neutro (adeus clarão!) */
+            border-radius: 12px; 
+            margin: 20px 0; 
+            color: #e2e8f0; /* Texto claro para contraste suave */
+            box-sizing: border-box;
+            border: 1px solid #4a5568; /* Borda sutil para dar profundidade */
+        }
+
+        .artigo-container h1 { font-family: 'Russo One', sans-serif; font-size: 2.5em; margin-bottom: 10px; color: #fff; }
+        .artigo-container h2 { border-bottom: 3px solid #00f070; display: inline-block; padding-bottom: 5px; margin-top: 30px; color: #00f070; }
+        .artigo-container p { line-height: 1.6; font-size: 1.1em; text-align: left; color: #cbd5e0; }
+
+        .artigo-imagem-principal { 
+            width: 100%; 
+            max-height: 450px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 25px; 
+            border: 2px solid #4a5568;
+        }
+
+        /* Caixa de Melhor Dupla (Fundo mais escuro para destacar) */
+        .combinacao-box { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 30px; 
+            margin: 35px 0; 
+            background: #1a202c; 
+            padding: 25px; 
+            border-radius: 15px; 
+            border: 1px solid #00f070;
+        }
+
+        .combinacao-champ { display: flex; flex-direction: column; align-items: center; font-weight: bold; }
+        .combinacao-champ img { width: 120px; height: 120px; object-fit: cover; border-radius: 20px; border: 3px solid #00f070; }
+        .combinacao-plus { font-size: 3em; color: #4a5568; font-weight: bold; }
+
+        /* Lista de Golpes (Itens levemente mais claros que o fundo) */
+        .golpes-lista { padding: 0; }
+        .golpes-lista li { 
+            color: #e2e8f0; 
+            background-color: #353b48; 
+            padding: 15px; 
+            border-left: 5px solid #00f070; 
+            margin-bottom: 10px; 
+            list-style: none; 
+            font-weight: bold;
+        }
+
+        .tag-categoria { background: #00f070; color: #1a202c; padding: 5px 12px; border-radius: 5px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; }
+    </style>
 </head>
 <body>
 
@@ -21,46 +80,36 @@
 
     <main>
         <div class="artigo-container">
-            <h1>Nova campeã Caitlyn</h1>
+            <span class="tag-categoria">Novo Campeão</span>
+            <h1>Caitlyn: A Xerife de Piltover chega ao 2XKO</h1>
+            <p>Com um rifle de precisão e uma mente estratégica, Caitlyn entra no elenco de 2XKO como uma das personagens de controle (zoners) mais fortes do jogo.</p>
             
-            <img class="artigo-imagem-principal" src="../champs/caitlyn.avif" alt="Arte da campeã Caitlyn">
+            <img class="artigo-imagem-principal" src="../champs/caitlyn.avif" alt="Caitlyn 2XKO">
 
-            <p class="artigo-paragrafo">A Xerife de Piltover chegou ao 2XKO e já mudou completamente o meta! Caitlyn entra na arena com um estilo de jogo focado em controle de espaço (Zoner) e altíssima precisão. Ela não é para iniciantes, exigindo domínio tático para punir os oponentes de longe.</p>
-            <p class="artigo-paragrafo">Vamos verificar mais sobre como ela funciona no jogo:</p>
-            
-            <hr>
+            <h2>Estilo de Jogo</h2>
+            <p>Diferente de personagens como Vi ou Yasuo que buscam o contato direto, Caitlyn brilha quando mantém o adversário à distância. Ela utiliza armadilhas e tiros de longo alcance para ditar o ritmo da luta.</p>
 
-            <h2>Melhor Combinação</h2>
+            <h2>Melhor Dupla para Caitlyn</h2>
             <div class="combinacao-box">
                 <div class="combinacao-champ">
                     <img src="../champs/caitlyn.avif" alt="Caitlyn">
                     <span>Caitlyn</span>
                 </div>
-                <span class="combinacao-plus">+</span>
+                <div class="combinacao-plus">+</div>
                 <div class="combinacao-champ">
                     <img src="../champs/vi.avif" alt="Vi">
                     <span>Vi</span>
                 </div>
             </div>
-            <p class="artigo-paragrafo" style="text-align: center;">A sinergia de Arcane em ação! Vi atua como a força bruta encurralando o inimigo, enquanto Caitlyn usa seus Assists para cobrir abordagens e finalizar combos com Headshots devastadores.</p>
+            <p style="text-align: center; font-style: italic;"><strong>Sinergia:</strong> Vi oferece a defesa e o "peel" que Caitlyn precisa. Se o inimigo chegar perto, Vi o afasta, permitindo que a Xerife continue o bombardeio.</p>
 
-            <h2>Lista de Golpes Principais</h2>
-            <div class="golpes-secao">
-                <h3>Especiais de Controle</h3>
-                <ul class="golpes-lista">
-                    <li><strong>Armadilha Mecânica (Trap):</strong> S1 (Cria uma zona de perigo no chão)</li>
-                    <li><strong>Rede Calibre 90:</strong> S2 + Trás (Mobilidade defensiva e lentidão no hit)</li>
-                    <li><strong>Pacificadora de Piltover:</strong> S1 + Frente (Projétil principal, pode ser carregado)</li>
-                </ul>
-            </div>
-
-            <div class="golpes-secao">
-                <h3>Ultimate</h3>
-                <ul class="golpes-lista">
-                    <li><strong>Ás na Manga (Headshot):</strong> S1 + S2 (Tiro de precisão letal que atravessa a tela inteira. Excelente para punir erros de longe).</li>
-                </ul>
-            </div>
-            
+            <h2>Principais Golpes</h2>
+            <ul class="golpes-lista">
+                <li>🎯 Headshot: Um tiro carregado que atravessa a tela e causa dano massivo.</li>
+                <li>🕸️ 90-Caliber Net: Dispara uma rede que impulsiona Caitlyn para trás, criando distância.</li>
+                <li>🪤 Yordle Snap Trap: Posiciona uma armadilha no chão que imobiliza o inimigo para um combo livre.</li>
+                <li>🚀 Ace in the Hole (Ultimate): Um tiro rastreador impossível de esquivar sem auxílio de assistência.</li>
+            </ul>
         </div>
     </main>
 
