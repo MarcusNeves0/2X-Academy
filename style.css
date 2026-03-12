@@ -1,6 +1,6 @@
-/* style.css - CÓDIGO FINAL CONSOLIDADO E CORRIGIDO */
+/* style.css - VERSÃO FINAL BLINDADA */
 
-/* 1. IMPORTAÇÃO DA FONTE (OBRIGATÓRIA) */
+/* 1. IMPORTAÇÃO DA FONTE Russo One */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 /* --- CONFIGURAÇÕES GERAIS --- */
@@ -81,10 +81,10 @@ main { width: 100%; max-width: 1200px; padding: 40px 20px; display: flex; flex-d
     border-radius: 8px;
 }
 
-/* CORREÇÃO PARA NOTÍCIAS RETANGULARES (Aquelas que ficavam "fininhas") */
-.noticia-box.noticia-box-rectangular {
-    width: 100%; 
-    height: 250px; /* Força a altura para não ficar esmagada */
+/* CORREÇÃO PARA NOTÍCIAS RETANGULARES (image_8b7aa3.jpg) */
+.noticia-box-rectangular {
+    width: 100% !important; 
+    height: 250px !important; /* Altura igual às de cima para alinhar */
 }
 
 .noticias-container-fullwidth { 
@@ -112,30 +112,56 @@ main { width: 100%; max-width: 1200px; padding: 40px 20px; display: flex; flex-d
 .noticia-box.background-battlepass { background-image: url('assets/battlepass1.jpeg'); }
 .noticia-box.background-treta { background-image: url('assets/treta.png'); }
 
-/* --- TIER LIST (CAMPEÕES E DUPLAS) - RECUPERAÇÃO DAS CORES --- */
+/* --- TIER LIST (CAMPEÕES E DUPLAS) - BLINDAGEM DE CORES --- */
 .tierlist-container { width: 100%; max-width: 900px; }
-.tier-row, .tier-row-teams { display: flex; margin-bottom: 10px; background-color: #353b48; border-radius: 8px; overflow: hidden; }
+.tier-row, .tier-row-teams { display: flex; margin-bottom: 15px; background-color: #353b48; border-radius: 8px; overflow: hidden; border: none; }
 
-/* Estilo do Rótulo Lateral (S, A, B) */
+/* Estilo Base do Rótulo Lateral */
 .tier-label, .tier-label-box { 
-    flex-shrink: 0; width: 90px; display: flex; justify-content: center; align-items: center; 
-    font-family: 'Russo One', sans-serif; font-size: 3em; font-weight: bold; color: white; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+    flex-shrink: 0; 
+    width: 90px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-family: 'Russo One', sans-serif; 
+    font-size: 3em; 
+    font-weight: bold; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* CORES DOS RANKINGS (Garantindo que apareçam) */
-.tier-s .tier-label, .tier-s.tier-label-box { background-color: #e84118 !important; }
-.tier-a .tier-label, .tier-a.tier-label-box { background-color: #0097e6 !important; }
-.tier-b .tier-label, .tier-b.tier-label-box { background-color: #fbc531 !important; }
-.tier-c .tier-label { background-color: #4cd137; }
-.tier-d .tier-label { background-color: #8c8c8c; }
+/* SELETORES ULTRA-ESPECÍFICOS PARA AS CORES (Garantia total) */
+/* Tier S */
+.tier-row.tier-s .tier-label, 
+.tier-s.tier-label-box,
+.tier-label-box.tier-s { 
+    background-color: #e84118 !important; 
+}
 
-/* Estilo das Fotos dos Campeões */
+/* Tier A */
+.tier-row.tier-a .tier-label, 
+.tier-a.tier-label-box,
+.tier-label-box.tier-a { 
+    background-color: #0097e6 !important; 
+}
+
+/* Tier B */
+.tier-row.tier-b .tier-label, 
+.tier-b.tier-label-box,
+.tier-label-box.tier-b { 
+    background-color: #fbc531 !important; 
+}
+
+/* Tiers C e D */
+.tier-row.tier-c .tier-label { background-color: #4cd137 !important; }
+.tier-row.tier-d .tier-label { background-color: #8c8c8c !important; }
+
+/* Estilo das Fotos */
 .champion-portraits { display: flex; flex-wrap: wrap; padding: 10px; gap: 10px; }
 .champion-card { display: flex; flex-direction: column; align-items: center; width: 90px; }
 .champion-card img { width: 80px; height: 80px; border: 2px solid #fff; border-radius: 8px; }
 
-/* Estilo das Duplas */
+/* Duplas */
 .tier-row-teams { min-height: 200px; }
 .tier-label-box { width: 100px; font-size: 5em; }
 .tier-content-grid { flex-grow: 1; padding: 20px; display: flex; flex-wrap: wrap; gap: 15px; }
@@ -146,7 +172,7 @@ main { width: 100%; max-width: 1200px; padding: 40px 20px; display: flex; flex-d
 }
 .teams-page .team-portraits img { width: 70px; height: 70px; border-radius: 50%; border: 3px solid #1a202c; }
 
-/* --- PÁGINA DE FUSES (LAYOUT ÍCONE ESQUERDA) --- */
+/* --- PÁGINA DE FUSES (ÍCONE NA ESQUERDA) --- */
 .fuses-container { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 900px; }
 .fuses-page-dark .fuse-card { 
     display: flex; flex-direction: row; align-items: center; 
