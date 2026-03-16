@@ -54,3 +54,119 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
+/* --- ESTILO DO RODAPÉ (FOOTER) --- */
+footer {
+    width: 100%;
+    background-color: #111827; /* Preto levemente azulado */
+    color: #e2e8f0;
+    padding: 60px 0 30px;
+    margin-top: 80px;
+    border-top: 4px solid #00f070;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-section { flex: 1; min-width: 280px; }
+.footer-section h4 { color: #00f070; font-family: 'Russo One', sans-serif; margin-bottom: 20px; font-size: 1.2em; }
+.footer-section p { font-size: 0.95em; color: #cbd5e0; line-height: 1.6; }
+
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #e2e8f0; text-decoration: none; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+.footer-links a:hover { color: #00f070; transform: translateX(5px); }
+
+.catchphrase {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5em;
+    color: #00f070;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #374151;
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #9ca3af;
+}
+
+.disclaimer-alerta {
+    color: #fca5a5; /* Vermelho suave para o aviso */
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* --- RODAPÉ GLOBAL ACADEMY --- */
+footer {
+    width: 100%;
+    background-color: #111827;
+    color: #e2e8f0;
+    padding: 60px 0 30px;
+    margin-top: 80px;
+    border-top: 4px solid #00f070;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-section { flex: 1; min-width: 250px; }
+.footer-section h4 { color: #00f070; font-family: 'Russo One', sans-serif; margin-bottom: 20px; text-transform: uppercase; }
+.footer-section p { font-size: 0.95em; color: #cbd5e0; line-height: 1.6; }
+
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #e2e8f0; text-decoration: none; transition: 0.3s; display: block; }
+.footer-links a:hover { color: #00f070; transform: translateX(5px); }
+
+.catchphrase {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5em;
+    color: #00f070;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #374151;
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #9ca3af;
+}
+
+.disclaimer-alerta { color: #fca5a5; font-weight: bold; margin-bottom: 10px; display: block; font-size: 0.8em; }

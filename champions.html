@@ -7,75 +7,149 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* --- ESTILO EXCLUSIVO DA TIER LIST --- */
+        /* --- ESTILO ESPECÍFICO DA TIER LIST --- */
         .tierlist-container { 
             width: 100%; 
-            max-width: 900px; 
-            margin-top: 20px;
+            max-width: 1000px; 
+            margin: 40px auto;
         }
 
         .tier-row { 
             display: flex; 
-            margin-bottom: 15px; 
+            margin-bottom: 20px; 
             background-color: #353b48; 
-            border-radius: 8px; 
+            border-radius: 12px; 
             overflow: hidden; 
-            min-height: 110px;
+            min-height: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .tier-label { 
             flex-shrink: 0; 
-            width: 90px; 
+            width: 100px; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             font-family: 'Russo One', sans-serif; 
-            font-size: 3em; 
+            font-size: 3.5em; 
             font-weight: bold; 
             color: white; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        /* Cores dos Rankings */
-        .tier-s .tier-label { background-color: #e84118; }
-        .tier-a .tier-label { background-color: #0097e6; }
-        .tier-b .tier-label { background-color: #fbc531; }
-        .tier-c .tier-label { background-color: #4cd137; }
-        .tier-d .tier-label { background-color: #8c8c8c; }
+        /* Cores oficiais dos Ranks */
+        .tier-s .tier-label { background-color: #e84118; } /* Vermelho S */
+        .tier-a .tier-label { background-color: #0097e6; } /* Azul A */
+        .tier-b .tier-label { background-color: #fbc531; } /* Amarelo B */
+        .tier-c .tier-label { background-color: #4cd137; } /* Verde C */
+        .tier-d .tier-label { background-color: #8c8c8c; } /* Cinza D */
 
         .champion-portraits { 
             display: flex; 
             flex-wrap: wrap; 
-            padding: 15px; 
-            gap: 15px; 
+            padding: 20px; 
+            gap: 20px; 
             align-items: center;
         }
 
-        /* TRAVA DE TAMANHO DAS FOTOS */
+        /* LINKS E CARDS DOS CAMPEÕES */
+        .champion-link {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+
+        .champion-link:hover {
+            transform: translateY(-8px);
+        }
+
         .champion-card { 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            width: 80px; 
+            width: 85px; 
         }
 
         .champion-card img { 
             width: 80px; 
             height: 80px; 
-            border: 2px solid white; 
-            border-radius: 8px; 
+            border: 3px solid rgba(255, 255, 255, 0.8); 
+            border-radius: 10px; 
             object-fit: cover;
             background-color: #1a202c;
+            transition: all 0.3s;
+        }
+
+        .champion-link:hover img {
+            border-color: #00f070; /* Verde Neon ao passar o mouse */
+            box-shadow: 0 0 15px rgba(0, 240, 112, 0.5);
         }
 
         .champion-name {
-            font-size: 0.75em;
-            margin-top: 5px;
+            font-size: 0.8em;
+            margin-top: 8px;
             color: #e2e8f0;
             font-weight: bold;
             text-align: center;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
+        /* --- RODAPÉ MASTER INTEGRADO --- */
+        footer {
+            width: 100%;
+            background-color: #111827;
+            color: #e2e8f0;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-top: 4px solid #00f070;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-container {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .footer-section { flex: 1; min-width: 280px; }
+        .footer-section h4 { color: #00f070; font-family: 'Russo One', sans-serif; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-section p { font-size: 0.95em; color: #cbd5e0; line-height: 1.6; }
+
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #e2e8f0; text-decoration: none; transition: 0.3s; display: block; }
+        .footer-links a:hover { color: #00f070; padding-left: 8px; }
+
+        .catchphrase {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.5em;
+            color: #00f070;
+            margin-top: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #374151;
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #9ca3af;
+        }
+
+        .disclaimer-alerta { color: #fca5a5; font-weight: bold; margin-bottom: 10px; display: block; font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -91,41 +165,64 @@
     </header>
 
     <main>
-        <h2>Tier List de Campeões</h2>
+        <h2>Tier List de Campeões (Meta Atual)</h2>
         
         <div class="tierlist-container">
             
             <div class="tier-row tier-s">
                 <div class="tier-label">S</div>
                 <div class="champion-portraits">
-                    <div class="champion-card"><img src="champs/vi.avif"><div class="champion-name">Vi</div></div>
-                    <div class="champion-card"><img src="champs/caitlyn.avif"><div class="champion-name">Caitlyn</div></div>
-                    <div class="champion-card"><img src="champs/yasuo.avif"><div class="champion-name">Yasuo</div></div>
-                    <div class="champion-card"><img src="champs/jinx.avif"><div class="champion-name">Jinx</div></div>
+                    <a href="champs/vi.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/vi.avif"><div class="champion-name">Vi</div></div>
+                    </a>
+                    <a href="champs/caitlyn.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/caitlyn.avif"><div class="champion-name">Caitlyn</div></div>
+                    </a>
+                    <a href="champs/yasuo.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/yasuo.avif"><div class="champion-name">Yasuo</div></div>
+                    </a>
+                    <a href="champs/jinx.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/jinx.avif"><div class="champion-name">Jinx</div></div>
+                    </a>
+                    <a href="champs/warwick.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/warwick.avif"><div class="champion-name">Warwick</div></div>
+                    </a>
                 </div>
             </div>
 
             <div class="tier-row tier-a">
                 <div class="tier-label">A</div>
                 <div class="champion-portraits">
-                    <div class="champion-card"><img src="champs/illaoi.avif"><div class="champion-name">Illaoi</div></div>
-                    <div class="champion-card"><img src="champs/ekko.avif"><div class="champion-name">Ekko</div></div>
-                    <div class="champion-card"><img src="champs/teemo.avif"><div class="champion-name">Teemo</div></div>
+                    <a href="champs/illaoi.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/illaoi.avif"><div class="champion-name">Illaoi</div></div>
+                    </a>
+                    <a href="champs/ekko.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/ekko.avif"><div class="champion-name">Ekko</div></div>
+                    </a>
+                    <a href="champs/teemo.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/teemo.avif"><div class="champion-name">Teemo</div></div>
+                    </a>
                 </div>
             </div>
 
             <div class="tier-row tier-b">
                 <div class="tier-label">B</div>
                 <div class="champion-portraits">
-                    <div class="champion-card"><img src="champs/braum.avif"><div class="champion-name">Braum</div></div>
-                    <div class="champion-card"><img src="champs/blitzcrank.avif"><div class="champion-name">Blitz</div></div>
+                    <a href="champs/braum.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/braum.avif"><div class="champion-name">Braum</div></div>
+                    </a>
+                    <a href="champs/blitzcrank.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/blitzcrank.avif"><div class="champion-name">Blitz</div></div>
+                    </a>
                 </div>
             </div>
 
             <div class="tier-row tier-c">
                 <div class="tier-label">C</div>
                 <div class="champion-portraits">
-                    <div class="champion-card"><img src="champs/ahri.avif"><div class="champion-name">Ahri</div></div>
+                    <a href="champs/ahri.html" class="champion-link">
+                        <div class="champion-card"><img src="champs/ahri.avif"><div class="champion-name">Ahri</div></div>
+                    </a>
                 </div>
             </div>
 
@@ -137,6 +234,43 @@
 
         </div>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>O Laboratório de Runeterra não para. Estude frames, domine combos e suba de elo conosco.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="champions.html">Tier List</a></li>
+                    <li><a href="teams.html">Melhores Duplas</a></li>
+                    <li><a href="fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                    <li><a href="#">📧 Contato Profissional</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.85em;">
+                2XKO and all related properties are trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Ekko - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .guide-container { 
+            width: 100%; max-width: 1000px; padding: 40px; 
+            background-color: #2d3748; border-radius: 12px; 
+            margin: 20px auto; color: #e2e8f0; border: 1px solid #4a5568;
+            box-sizing: border-box;
+        }
+
+        /* Header do Personagem */
+        .hero-section { display: flex; gap: 30px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+        /* Borda Azul para o Rank A */
+        .hero-section img { width: 220px; height: 220px; border-radius: 15px; border: 4px solid #0097e6; object-fit: cover; }
+        .hero-info h1 { font-family: 'Russo One', sans-serif; font-size: 3.5em; margin: 0; color: #fff; }
+        .archetype { color: #0097e6; font-weight: bold; text-transform: uppercase; font-size: 1.1em; }
+
+        h2 { border-bottom: 3px solid #0097e6; display: inline-block; padding-bottom: 5px; margin-top: 40px; color: #fff; font-family: 'Russo One', sans-serif; }
+
+        /* Estilo dos Botões de Comando */
+        .input-group { display: inline-flex; align-items: center; gap: 5px; font-weight: bold; vertical-align: middle; }
+        
+        .btn-circle {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8em;
+            color: black;
+            border: 2px solid rgba(0,0,0,0.3);
+            font-family: 'Arial', sans-serif;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+
+        .btn-l { background-color: #cbd5e0; } /* Light */
+        .btn-m { background-color: #fbd38d; } /* Medium */
+        .btn-h { background-color: #feb2b2; } /* Heavy */
+        .btn-s1 { background-color: #63b3ed; } /* Special 1 (Azul) */
+        .btn-s2 { background-color: #e6007a; color: white; } /* Special 2 (Rosa/Red) */
+        
+        .arrow { font-size: 1.4em; color: #fff; font-weight: bold; }
+
+        /* Tabelas */
+        .skill-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #1a202c; border-radius: 8px; overflow: hidden; }
+        .skill-table th, .skill-table td { padding: 15px; text-align: left; border-bottom: 1px solid #2d3748; }
+        .skill-table th { background: #4a5568; color: #fff; text-transform: uppercase; font-size: 0.85em; }
+
+        /* Cards de Combo */
+        .combo-card { background: #1a202c; padding: 20px; border-radius: 12px; margin-top: 15px; border-left: 6px solid #0097e6; }
+        .combo-title { font-weight: bold; color: #00f070; margin-bottom: 10px; display: block; text-transform: uppercase; font-size: 0.9em; }
+        .combo-sequence { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; background: #2d3748; padding: 15px; border-radius: 8px; }
+
+        /* Footer Global Master */
+        footer { width: 100%; background-color: #111827; color: #e2e8f0; padding: 60px 0 30px; margin-top: 80px; border-top: 4px solid #00f070; display: flex; flex-direction: column; align-items: center; }
+        .footer-container { width: 100%; max-width: 1100px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; padding: 0 20px; box-sizing: border-box; }
+        .footer-section { flex: 1; min-width: 250px; }
+        .footer-section h4 { color: #00f070; font-family: 'Russo One', sans-serif; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-section p { font-size: 0.95em; color: #cbd5e0; line-height: 1.6; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #e2e8f0; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: #00f070; padding-left: 5px; }
+        .catchphrase { font-family: 'Russo One', sans-serif; font-size: 1.5em; color: #00f070; margin-top: 40px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+        .footer-bottom { margin-top: 40px; padding-top: 25px; border-top: 1px solid #374151; width: 100%; max-width: 1100px; text-align: center; font-size: 0.85em; color: #9ca3af; }
+        .disclaimer-alerta { color: #fca5a5; font-weight: bold; margin-bottom: 10px; display: block; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="guide-container">
+            <div class="hero-section">
+                <img src="ekko.avif" alt="Ekko">
+                <div class="hero-info">
+                    <span class="archetype">Mix-up / Mobility / Time Control</span>
+                    <h1>Ekko</h1>
+                    <p>Ekko utiliza seu dispositivo Zero-Drive para manipular o tempo e criar aberturas na defesa inimiga. Sua jogabilidade foca em ataques rápidos e o uso de imagens residuais para atacar de ângulos inesperados.</p>
+                </div>
+            </div>
+
+            <h2>Ataques Normais Chave</h2>
+            <table class="skill-table">
+                <thead>
+                    <tr><th>Input</th><th>Nome</th><th>Uso Principal</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="btn-circle btn-m">M</div></td>
+                        <td>Bastão de Impacto</td>
+                        <td>Ataque de médio alcance ideal para iniciar pressões.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arrow">↓</span> + <div class="btn-circle btn-h">H</div></td>
+                        <td>Lançador Temporal</td>
+                        <td>Arremessa o oponente para o alto para iniciar o jogo aéreo.</td>
+                    </tr>
+                    <tr>
+                        <td><div class="btn-circle btn-h">H</div> (No Ar)</td>
+                        <td>Corte de Cima</td>
+                        <td>Excelente ferramenta para "cross-up" (cair nas costas do inimigo).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Habilidades Especiais</h2>
+            <table class="skill-table">
+                <thead>
+                    <tr><th>Comando</th><th>Habilidade</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> + <div class="btn-circle btn-s1">S1</div>
+                            </div>
+                        </td>
+                        <td>Giratempo (Timewinder)</td>
+                        <td>Lança um disco que se expande e volta para o Ekko, atingindo duas vezes.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↙</span> <span class="arrow">←</span> + <div class="btn-circle btn-s1">S1</div>
+                            </div>
+                        </td>
+                        <td>Mergulho Fásico</td>
+                        <td>Um dash rápido seguido de um ataque. Permite atravessar projéteis se usado no tempo certo.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> + <div class="btn-circle btn-s2">S2</div>
+                            </div>
+                        </td>
+                        <td>Convergência Paralela</td>
+                        <td>Cria uma zona que atordoa inimigos dentro dela após alguns segundos.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Biblioteca de Combos</h2>
+            
+            <div class="combo-card">
+                <span class="combo-title">Combo 1: Iniciante (Z-Drive Basic)</span>
+                <p>Combo padrão terrestre para aprender o alcance dos golpes.</p>
+                <div class="combo-sequence">
+                    <div class="btn-circle btn-l">L</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-m">M</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> <div class="btn-circle btn-s1">S1</div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <span class="combo-title">Combo 2: Intermediário (Air Mastery)</span>
+                <p>Combo utilizando o lançador para estender o dano.</p>
+                <div class="combo-sequence">
+                    <div class="btn-circle btn-m">M</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <span class="arrow">↑</span> (Pulo) <span class="arrow">→</span>
+                    <div class="btn-circle btn-m">M</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-s1">S1</div> (No Ar)
+                </div>
+            </div>
+
+            <div class="combo-card" style="border-left-color: #ff9d00;">
+                <span class="combo-title" style="color: #ff9d00;">Combo 3: Avançado (Chronobreak Loop)</span>
+                <p>Utiliza a imagem residual para estender o combo após o Ultimate.</p>
+                <div class="combo-sequence">
+                    <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> <div class="btn-circle btn-s2">S2</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-l">L</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <span class="arrow">↙</span> <span class="arrow">←</span> <div class="btn-circle btn-s2">S2</div> (Super)
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Estude a linha do tempo, domine o Ekko e mostre que o Rank A é o topo do mundo.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

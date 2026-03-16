@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Ahri - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .guide-container { 
+            width: 100%; max-width: 1000px; padding: 40px; 
+            background-color: #2d3748; border-radius: 12px; 
+            margin: 20px auto; color: #e2e8f0; border: 1px solid #4a5568;
+            box-sizing: border-box;
+        }
+
+        /* Header do Personagem */
+        .hero-section { display: flex; gap: 30px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .hero-section img { width: 220px; height: 220px; border-radius: 15px; border: 4px solid #e6007a; object-fit: cover; }
+        .hero-info h1 { font-family: 'Russo One', sans-serif; font-size: 3.5em; margin: 0; color: #fff; }
+        .archetype { color: #e6007a; font-weight: bold; text-transform: uppercase; font-size: 1.1em; }
+
+        h2 { border-bottom: 3px solid #e6007a; display: inline-block; padding-bottom: 5px; margin-top: 40px; color: #fff; font-family: 'Russo One', sans-serif; }
+
+        /* Estilo dos Botões de Comando */
+        .input-group { display: inline-flex; align-items: center; gap: 5px; font-weight: bold; vertical-align: middle; }
+        
+        .btn-circle {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8em;
+            color: black;
+            border: 2px solid rgba(0,0,0,0.3);
+            font-family: 'Arial', sans-serif;
+            box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+
+        .btn-l { background-color: #cbd5e0; } /* Light */
+        .btn-m { background-color: #fbd38d; } /* Medium */
+        .btn-h { background-color: #feb2b2; } /* Heavy */
+        .btn-s1 { background-color: #63b3ed; } /* Special 1 (Azul) */
+        .btn-s2 { background-color: #e6007a; color: white; } /* Special 2 (Rosa/Red) */
+        
+        .arrow { font-size: 1.4em; color: #fff; font-weight: bold; }
+
+        /* Tabelas */
+        .skill-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #1a202c; border-radius: 8px; overflow: hidden; }
+        .skill-table th, .skill-table td { padding: 15px; text-align: left; border-bottom: 1px solid #2d3748; }
+        .skill-table th { background: #4a5568; color: #fff; text-transform: uppercase; font-size: 0.85em; }
+
+        /* Cards de Combo */
+        .combo-card { background: #1a202c; padding: 20px; border-radius: 12px; margin-top: 15px; border-left: 6px solid #e6007a; }
+        .combo-title { font-weight: bold; color: #00f070; margin-bottom: 10px; display: block; text-transform: uppercase; font-size: 0.9em; }
+        .combo-sequence { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; background: #2d3748; padding: 15px; border-radius: 8px; }
+
+        /* Footer Customizado */
+        footer { 
+            width: 100%; background-color: #111827; padding: 50px 0 30px; margin-top: 80px; border-top: 4px solid #00f070; 
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .footer-container { width: 100%; max-width: 1100px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; padding: 0 20px; box-sizing: border-box; }
+        .footer-section h4 { color: #00f070; font-family: 'Russo One', sans-serif; margin-bottom: 15px; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links a { color: #e2e8f0; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: #00f070; }
+        .catchphrase { font-family: 'Russo One', sans-serif; font-size: 1.4em; color: #00f070; margin-top: 30px; text-transform: uppercase; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="guide-container">
+            <div class="hero-section">
+                <img src="ahri.avif" alt="Ahri">
+                <div class="hero-info">
+                    <span class="archetype">Mage / Mix-up / Zoner</span>
+                    <h1>Ahri</h1>
+                    <p>A Raposa de Nove Caudas é uma mestre em controlar a distância e punir erros com o seu Charme. Ahri brilha ao manter o adversário confuso entre ataques de longe e avanços rápidos.</p>
+                </div>
+            </div>
+
+            <h2>Ataques Normais Chave</h2>
+            <table class="skill-table">
+                <thead>
+                    <tr><th>Input</th><th>Nome</th><th>Uso Principal</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="btn-circle btn-l">L</div></td>
+                        <td>Golpe de Cauda</td>
+                        <td>Rápido e com bom alcance para um golpe leve.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arrow">↓</span> + <div class="btn-circle btn-m">M</div></td>
+                        <td>Rasteira Mística</td>
+                        <td>Ataque baixo essencial para forçar o oponente a defender agachado.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="arrow">↓</span> + <div class="btn-circle btn-h">H</div></td>
+                        <td>Chute Ascendente</td>
+                        <td>Lança o inimigo para o alto. A base para todos os combos aéreos da Ahri.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Habilidades Especiais</h2>
+            <table class="skill-table">
+                <thead>
+                    <tr><th>Comando</th><th>Habilidade</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> + <div class="btn-circle btn-s1">S1</div>
+                            </div>
+                        </td>
+                        <td>Orbe da Ilusão</td>
+                        <td>Dispara uma esfera que vai e volta, atingindo o oponente duas vezes.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↙</span> <span class="arrow">←</span> + <div class="btn-circle btn-s1">S1</div>
+                            </div>
+                        </td>
+                        <td>Fogo de Raposa</td>
+                        <td>Invoca três chamas que perseguem o oponente se ele estiver próximo.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> + <div class="btn-circle btn-s2">S2</div>
+                            </div>
+                        </td>
+                        <td>Encanto (Charm)</td>
+                        <td>Lança um coração que imobiliza o inimigo por um curto período. Essencial para abrir combos.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group">
+                                <span class="arrow">↓</span> <span class="arrow">↙</span> <span class="arrow">←</span> + <div class="btn-circle btn-s2">S2</div>
+                            </div>
+                        </td>
+                        <td>Ímpeto Espiritual</td>
+                        <td>Um avanço rápido que pode ser usado três vezes para atravessar o mapa ou o oponente.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Biblioteca de Combos</h2>
+            
+            <div class="combo-card">
+                <span class="combo-title">Combo 1: Iniciante (Zoneamento Básico)</span>
+                <p>Mantenha a distância e termine com o Orbe.</p>
+                <div class="combo-sequence">
+                    <div class="btn-circle btn-l">L</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-m">M</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> <div class="btn-circle btn-s1">S1</div>
+                </div>
+            </div>
+
+            <div class="combo-card">
+                <span class="combo-title">Combo 2: Intermediário (Charm Start)</span>
+                <p>Inicie com o Charm para garantir o combo aéreo completo.</p>
+                <div class="combo-sequence">
+                    <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> <div class="btn-circle btn-s2">S2</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-m">M</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <span class="arrow">↑</span> (Pulo) <span class="arrow">→</span>
+                    <div class="btn-circle btn-m">M</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-s1">S1</div>
+                </div>
+            </div>
+
+            <div class="combo-card" style="border-left-color: #ff9d00;">
+                <span class="combo-title" style="color: #ff9d00;">Combo 3: Avançado (Spirit Dash Loop)</span>
+                <p>Use o Dash para trocar de lado e continuar a pressão no canto.</p>
+                <div class="combo-sequence">
+                    <div class="btn-circle btn-h">H</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <span class="arrow">↙</span> <span class="arrow">←</span> <div class="btn-circle btn-s2">S2</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-l">L</div> <span class="arrow">→</span>
+                    <span class="arrow">↓</span> <span class="arrow">↘</span> <span class="arrow">→</span> <div class="btn-circle btn-s1">S1</div> <span class="arrow">→</span>
+                    <div class="btn-circle btn-s2">S2</div> (Ultimate)
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+<footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                    <li><a href="#">📧 Contato Profissional</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">
+                2XKO and all related properties are trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </footer>
+
+</html>
