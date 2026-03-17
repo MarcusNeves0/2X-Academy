@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patch Notes - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .patch-container { 
+            max-width: 900px; margin: 40px auto; padding: 20px; 
+            color: #e2e8f0; box-sizing: border-box;
+        }
+
+        .patch-header { 
+            text-align: center; border-bottom: 3px solid #ff4655; 
+            margin-bottom: 40px; padding-bottom: 20px; 
+        }
+        .patch-header h1 { font-family: 'Russo One', sans-serif; font-size: 3em; color: #fff; margin: 0; }
+        .patch-header p { color: #00f070; font-weight: bold; text-transform: uppercase; margin-top: 10px; }
+
+        /* Blocos de Notícia Vertical */
+        .news-block {
+            background: #2d3748; border-radius: 15px; margin-bottom: 40px;
+            overflow: hidden; border: 1px solid #4a5568; transition: 0.3s;
+            width: 100%; /* Garante que todos tenham a mesma largura */
+            display: flex;
+            flex-direction: column;
+        }
+        .news-block:hover { border-color: #ff4655; transform: translateY(-5px); }
+
+        .news-image {
+            width: 100%; height: 350px;
+            background-size: cover;
+            border-bottom: 4px solid #ff4655;
+        }
+
+        /* Ajustes específicos de posicionamento de imagem */
+        .img-ekko { background-image: url('../champs/ekko.avif'); background-position: center 10%; }
+        .img-yasuo { background-image: url('../champs/yasuo.avif'); background-position: center 25%; }
+        .img-aureate { background-image: url('../assets/aureate.jpg'); background-position: center; }
+        .img-snowmoon { background-image: url('../assets/snowmoon.jpg'); background-position: center; }
+        .img-crimecity { background-image: url('../assets/crimecity.jpg'); background-position: center; }
+
+        .news-text { padding: 30px; }
+        .news-text h2 { font-family: 'Russo One', sans-serif; color: #fff; margin-top: 0; font-size: 1.8em; text-transform: uppercase; }
+        
+        .tag { 
+            display: inline-block; padding: 5px 12px; border-radius: 5px; 
+            font-size: 0.8em; font-weight: bold; text-transform: uppercase; margin-bottom: 15px;
+        }
+        .tag-nerf { background: #ff4655; color: #fff; }
+        .tag-skin { background: #f1c40f; color: #000; }
+
+        .change-list { list-style: none; padding: 0; margin-top: 15px; }
+        .change-list li { margin-bottom: 10px; padding-left: 20px; position: relative; line-height: 1.5; }
+        .change-list li::before { content: "•"; position: absolute; left: 0; color: #ff4655; font-weight: bold; }
+
+        /* Histórico Recolhível */
+        .history-section { margin-top: 60px; text-align: center; }
+        .history-section h2 { font-family: 'Russo One', sans-serif; color: #4a5568; margin-bottom: 30px; text-transform: uppercase; }
+
+        details { 
+            background: #1a202c; border-radius: 8px; margin: 0 auto 15px; 
+            max-width: 850px; border: 1px solid #374151; text-align: left;
+        }
+        
+        summary { 
+            padding: 20px; font-family: 'Russo One', sans-serif; cursor: pointer; 
+            color: #fff; display: flex; justify-content: space-between; align-items: center;
+            list-style: none;
+        }
+        
+        summary::after { content: "▼"; color: #ff4655; font-size: 0.9em; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+
+        .history-content { padding: 0 25px 25px 25px; border-top: 1px solid #374151; animation: fadeIn 0.4s ease; }
+        .history-content h4 { color: #00f070; margin: 20px 0 10px; text-transform: uppercase; font-size: 0.9em; }
+        .history-content p { font-size: 0.9em; color: #cbd5e0; line-height: 1.6; margin-bottom: 10px; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main class="patch-container">
+        
+        <div class="patch-header">
+            <h1>PATCH NOTES 1.1.3</h1>
+            <p>Atualização de Março - Status: ATUAL</p>
+        </div>
+
+        <article class="news-block">
+            <div class="news-image img-ekko"></div>
+            <div class="news-text">
+                <span class="tag tag-nerf">Balanceamento</span>
+                <h2>Ekko - Refinamento de Punição</h2>
+                <ul class="change-list">
+                    <li>O tempo de recuperação do <b>Rebobinar (E)</b> foi aumentado em 4 frames para evitar abusos defensivos.</li>
+                    <li>Ajuste na hitbox do soco carregado para maior fidelidade visual.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="news-block">
+            <div class="news-image img-yasuo"></div>
+            <div class="news-text">
+                <span class="tag tag-nerf">Balanceamento</span>
+                <h2>Yasuo - Mudanças no Neutro</h2>
+                <ul class="change-list">
+                    <li>Redução leve na largura do projétil do <b>Furacão (Q3)</b> em distâncias máximas.</li>
+                    <li>Corrigido um bug onde a parede de vento bloqueava assistências indevidamente.</li>
+                </ul>
+            </div>
+        </article>
+
+        <article class="news-block">
+            <div class="news-image img-aureate"></div>
+            <div class="news-text">
+                <span class="tag tag-skin">Novos Cosméticos</span>
+                <h2>Coleção Aureate</h2>
+                <p>O prestígio de Piltover chega à arena. Detalhes em ouro e marfim para Braum e campeões de elite.</p>
+            </div>
+        </article>
+
+        <article class="news-block">
+            <div class="news-image img-snowmoon"></div>
+            <div class="news-text">
+                <span class="tag tag-skin">Novos Cosméticos</span>
+                <h2>Coleção Snow Moon</h2>
+                <p>A elegância fria domina o roster. Ahri e Warwick recebem visuais épicos com temática de inverno.</p>
+            </div>
+        </article>
+
+        <article class="news-block">
+            <div class="news-image img-crimecity"></div>
+            <div class="news-text">
+                <span class="tag tag-skin">Novos Cosméticos</span>
+                <h2>Coleção Crime City</h2>
+                <p>Vista seus campeões com o estilo clássico de máfia. Bundle inclui emotes temáticos de dupla.</p>
+            </div>
+        </article>
+
+        <div class="history-section">
+            <h2>Histórico de Atualizações</h2>
+
+            <details>
+                <summary>Patch Notes 1.1.2 - Estabilidade de Rede</summary>
+                <div class="history-content">
+                    <h4>Mecânicas de Conexão</h4>
+                    <p>Melhorias no <b>Rollback Netcode</b> para reduzir o jitter em partidas transcontinentais. As trocas de Tag agora possuem prioridade de pacote.</p>
+                    <h4>Correções Técnicas</h4>
+                    <p><b>Braum:</b> Resolvido um problema onde o escudo não detectava colisões de certas assistências.</p>
+                    <p><b>Jinx:</b> Ajustada a trajetória do Super Mega Míssil Mortal.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Patch Notes 1.1.1 - Season 1: Ignição</summary>
+                <div class="history-content">
+                    <h4>Sistema Competitivo</h4>
+                    <p>Início oficial das filas ranqueadas. O sistema de MMR foi resetado para o início da Season 1.</p>
+                    <h4>Ajuste de Jogabilidade</h4>
+                    <p>A janela de execução do <b>Handshake Tag</b> foi aumentada em 2 frames para maior acessibilidade.</p>
+                    <h4>Battle Pass</h4>
+                    <p>Lançamento do primeiro passe com 100 tiers de recompensas.</p>
+                </div>
+            </details>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">2XKO and all related properties are trademarks of Riot Games, Inc.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

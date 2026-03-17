@@ -2,18 +2,101 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Guia de Fuses - 2XAcademy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Fuse - 2XAcademy</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .fuses-container { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 900px; }
-        .fuse-card { display: flex; flex-direction: row; align-items: center; background-color: #2d3748; border-radius: 12px; padding: 20px; border: 1px solid #4a5568; }
-        .fuse-icon-64 { width: 64px; height: 64px; flex-shrink: 0; margin-right: 25px; border-radius: 8px; border: 2px solid #00f070; }
-        .fuse-info { display: flex; flex-direction: column; text-align: left; }
-        .fuse-title { margin: 0; font-size: 1.5em; color: #00f070; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
-        .fuse-description { color: #cbd5e0; margin-top: 5px; line-height: 1.4; }
+        .fuses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .fuse-card {
+            background: #2d3748;
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid #4a5568;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .fuse-card:hover {
+            transform: translateY(-10px);
+            border-color: #00f070;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .fuse-img {
+            width: 100%;
+            height: 130px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+        }
+
+        .fuse-name {
+            font-family: 'Russo One', sans-serif;
+            font-size: 1.6em;
+            color: #fff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .fuse-tag {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Cores das Tags baseadas nos novos Fuses */
+        .tag-freestyle { background: #e84118; color: white; }
+        .tag-doubledown { background: #9b59b6; color: white; }
+        .tag-pulse { background: #3498db; color: white; }
+        .tag-fury { background: #f1c40f; color: black; }
+        .tag-assist { background: #1abc9c; color: white; }
+        .tag-juggernaut { background: #d35400; color: white; }
+        .tag-sidekick { background: #e6007a; color: white; }
+
+        .fuse-description {
+            color: #cbd5e0;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        .btn-ver-mais {
+            background: #00f070;
+            color: #111827;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }
+
+        .btn-ver-mais:hover {
+            background: #00c058;
+            box-shadow: 0 0 15px rgba(0, 240, 112, 0.4);
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>2XAcademy</h1>
         <nav class="navegacao">
@@ -23,24 +106,90 @@
             <a href="fuses.html" class="nav-botao">Fuses</a>
         </nav>
     </header>
+
     <main>
-        <h2>Guia de Fuses (Oficial)</h2>
-        <div class="fuses-container">
-            <div class="fuse-card"><img src="assets/2xassist.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">2X Assist</h3><p class="fuse-description">Permite realizar duas ações de assistência consecutivas.</p></div></div>
-            <div class="fuse-card"><img src="assets/doubledown.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Double Down</h3><p class="fuse-description">Permite combinar os Ultimate Moves de ambos os personagens.</p></div></div>
-            <div class="fuse-card"><img src="assets/freestyle.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Freestyle</h3><p class="fuse-description">Habilita trocas livres durante os combos, inclusive no ar.</p></div></div>
-            <div class="fuse-card"><img src="assets/juggernaut.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Juggernaut</h3><p class="fuse-description">Concede armadura em ataques pesados e regenera barra de Burst.</p></div></div>
-            <div class="fuse-card"><img src="assets/sidekick.png" class="fuse-icon-64"><div class="fuse-info"><h3 class="fuse-title">Sidekick</h3><p class="fuse-description">Melhora a regeneração da vida recuperável na reserva.</p></div></div>
+        <h2 style="text-align: center; margin-top: 50px; font-family: 'Russo One', sans-serif; font-size: 2.5em;">Sistemas de Fuse</h2>
+        <p style="text-align: center; color: #cbd5e0; max-width: 600px; margin: 10px auto 40px;">Utilize as Fuses para definir a estratégia da sua dupla. Cada escolha abre novas possibilidades de combo e defesa.</p>
+
+        <div class="fuses-grid">
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/freestyle.png" alt="Freestyle" class="fuse-img">
+                    <span class="fuse-tag tag-freestyle">Alta Execução</span>
+                    <div class="fuse-name">Freestyle</div>
+                    <p class="fuse-description">Permite trocas diretas (Handshake Tags) múltiplas vezes no mesmo combo.</p>
+                </div>
+                <a href="fuses/freestyle.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
+
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/doubledown.png" alt="Double Down" class="fuse-img">
+                    <span class="fuse-tag tag-doubledown">Dano Massivo</span>
+                    <div class="fuse-name">Double Down</div>
+                    <p class="fuse-description">Permite cancelar uma Ultimate na outra para combos fatais.</p>
+                </div>
+                <a href="fuses/double-down.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
+
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/Pulse.png" alt="Pulse" class="fuse-img">
+                    <span class="fuse-tag tag-pulse">Acessibilidade</span>
+                    <div class="fuse-name">Pulse</div>
+                    <p class="fuse-description">Facilita a execução de combos e foca nos fundamentos do jogo neutro.</p>
+                </div>
+                <a href="fuses/pulse.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
+
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/fury.png" alt="Fury" class="fuse-img">
+                    <span class="fuse-tag tag-fury">Comeback</span>
+                    <div class="fuse-name">Fury</div>
+                    <p class="fuse-description">Aumenta o dano causado quando sua vida está abaixo de um certo limite.</p>
+                </div>
+                <a href="fuses/fury.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
+
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/2xassist.png" alt="2x Assist" class="fuse-img">
+                    <span class="fuse-tag tag-assist">Sinergia</span>
+                    <div class="fuse-name">2x Assist</div>
+                    <p class="fuse-description">Permite utilizar ataques de assistência duas vezes seguidas em sequência.</p>
+                </div>
+                <a href="fuses/2x-assist.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
+
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/juggernaut.png" alt="Juggernaut" class="fuse-img">
+                    <span class="fuse-tag tag-juggernaut">Defesa</span>
+                    <div class="fuse-name">Juggernaut</div>
+                    <p class="fuse-description">Focada em resistência e trocas de dano favoráveis com armadura.</p>
+                </div>
+                <a href="fuses/juggernaut.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
+
+            <div class="fuse-card">
+                <div>
+                    <img src="assets/sidekick.png" alt="Sidekick" class="fuse-img">
+                    <span class="fuse-tag tag-sidekick">Tag-In</span>
+                    <div class="fuse-name">Sidekick</div>
+                    <p class="fuse-description">Potencializa os ataques de entrada do personagem reserva após uma troca.</p>
+                </div>
+                <a href="fuses/sidekick.html" class="btn-ver-mais">Explorar Guia Tático</a>
+            </div>
         </div>
     </main>
-</body>
 
-<footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h4>2XAcademy</h4>
                 <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
-                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. Não possuímos vínculo com a Riot Games.</p>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
             </div>
 
             <div class="footer-section">
@@ -48,8 +197,8 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="champions.html">Tier List</a></li>
-                    <li><a href="teams.html">Duplas</a></li>
-                    <li><a href="fuses.html">Fuses</a></li>
+                    <li><a href="teams.html">Melhores Duplas</a></li>
+                    <li><a href="fuses.html">Guia de Fuses</a></li>
                 </ul>
             </div>
 
@@ -66,10 +215,11 @@
 
         <div class="footer-bottom">
             <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
-            <p style="margin-top: 8px;">
+            <p style="margin-top: 8px; font-size: 0.8em;">
                 2XKO and all related properties are trademarks of Riot Games, Inc.
             </p>
         </div>
     </footer>
 
+</body>
 </html>

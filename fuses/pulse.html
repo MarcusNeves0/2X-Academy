@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Pulse - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .fuse-detail-container {
+            max-width: 1000px; margin: 40px auto; padding: 40px;
+            background: #2d3748; border-radius: 15px; border-left: 10px solid #3498db;
+            box-sizing: border-box;
+        }
+        .highlight-box {
+            background: #1a202c; padding: 25px; border-radius: 10px; margin: 20px 0;
+            border: 1px dashed #3498db;
+        }
+        
+        /* Grid de Times */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .team-suggestion {
+            display: flex; gap: 20px; align-items: center; background: #353b48;
+            padding: 20px; border-radius: 12px; border: 1px solid #4a5568;
+            transition: 0.3s;
+        }
+        .team-suggestion:hover { border-color: #3498db; transform: scale(1.02); }
+
+        .char-icons { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+        .team-suggestion img { width: 70px; height: 70px; border-radius: 12px; border: 2px solid #3498db; object-fit: cover; }
+        
+        .team-info h4 { color: #fff; margin: 0 0 10px 0; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
+        .team-info p { font-size: 0.9em; color: #cbd5e0; line-height: 1.4; margin: 0; }
+
+        h2 { color: #3498db; font-family: 'Russo One', sans-serif; text-transform: uppercase; margin-top: 40px; }
+        .tag-recap { color: #00f070; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="fuse-detail-container">
+            <h1>PULSE</h1>
+            <p class="tag-recap">O Poder dos Fundamentos.</p>
+
+            <div class="highlight-box">
+                <h2>O que ela faz?</h2>
+                <p>A Pulse é a Fuse projetada para jogadores que querem focar na leitura do adversário e no posicionamento, sem se preocupar excessivamente com a complexidade técnica dos combos manuais.</p>
+                <ul>
+                    <li><strong>Auto-Combos:</strong> Permite realizar sequências básicas e eficazes apertando o mesmo botão repetidamente.</li>
+                    <li><strong>Otimização de Assistência:</strong> O sistema gerencia o tempo de recarga das assistências de forma mais eficiente para manter a tela sempre ativa.</li>
+                    <li><strong>Foco no Neutro:</strong> Libera a carga mental do jogador para focar em defesa, punições e controle de distância.</li>
+                </ul>
+            </div>
+
+            <h2>Top 6 Times Sugeridos</h2>
+            
+            <div class="teams-grid">
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/vi.avif" alt="Vi">
+                        <img src="../champs/blitzcrank.avif" alt="Blitz">
+                    </div>
+                    <div class="team-info">
+                        <h4>Vi + Blitzcrank</h4>
+                        <p>A dupla perfeita para iniciantes. Use o puxão do Blitz e deixe a Pulse cuidar da transição para os socos pesados da Vi.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/braum.avif" alt="Braum">
+                        <img src="../champs/darius.avif" alt="Darius">
+                    </div>
+                    <div class="team-info">
+                        <h4>Braum + Darius</h4>
+                        <p>Time focado em "Fundamentais". A Pulse ajuda a manter a pressão constante enquanto você se preocupa em bloquear e usar o escudo do Braum no tempo certo.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/caitlyn.avif" alt="Caitlyn">
+                        <img src="../champs/jinx.avif" alt="Jinx">
+                    </div>
+                    <div class="team-info">
+                        <h4>Caitlyn + Jinx</h4>
+                        <p>Zonear nunca foi tão fácil. Foque em manter a distância com tiros e deixe a Pulse realizar as extensões de combo caso o inimigo consiga se aproximar.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/yasuo.avif" alt="Yasuo">
+                        <img src="../champs/ekko.avif" alt="Ekko">
+                    </div>
+                    <div class="team-info">
+                        <h4>Yasuo + Ekko</h4>
+                        <p>Para quem quer aprender os "bonecos difíceis". A Pulse facilita os inputs complexos de Yasuo e Ekko, permitindo que você aprenda o ritmo deles aos poucos.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/ahri.avif" alt="Ahri">
+                        <img src="../champs/illaoi.avif" alt="Illaoi">
+                    </div>
+                    <div class="team-info">
+                        <h4>Ahri + Illaoi</h4>
+                        <p>Controle de área simplificado. Foque em posicionar os tentáculos com a Illaoi enquanto a Pulse cuida das finalizações após o charme da Ahri.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/warwick.avif" alt="Warwick">
+                        <img src="../champs/braum.avif" alt="Braum">
+                    </div>
+                    <div class="team-info">
+                        <h4>Warwick + Braum</h4>
+                        <p>Ataque e defesa equilibrados. Warwick persegue com ajuda da Pulse enquanto o Braum garante a segurança da dupla com facilidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Dica de Especialista</h2>
+            <p>Não ache que a Pulse é "só para novatos". Muitos jogadores experientes usam esta Fuse para garantir que combos críticos não falhem em situações de lag ou alta pressão em torneios!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                    <li><a href="#">📧 Contato Profissional</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">
+                2XKO and all related properties are trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

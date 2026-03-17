@@ -37,7 +37,7 @@
         }
         .noticia-box:hover { transform: scale(1.05); }
 
-        /* Notícias Retangulares (As 2 de baixo) */
+        /* Notícias Retangulares */
         .noticias-container-fullwidth { 
             display: flex; 
             justify-content: center; 
@@ -89,6 +89,7 @@
         .background-caitlyn { background-image: url('champs/caitlyn.avif'); }
         .background-rank { background-image: url('assets/rank.avif'); }
         .background-ahri { background-image: url('champs/ahri.avif'); }
+        .background-yasuo { background-image: url('assets/yasuo.avif'); }
         .background-battlepass { background-image: url('assets/battlepass1.jpeg'); }
         .background-treta { background-image: url('assets/treta.png'); }
     </style>
@@ -129,6 +130,14 @@
         </div>
 
         <div class="noticias-container-fullwidth">
+             <a href="news/patchs.html" class="noticia-link">
+                <div class="noticia-box-rectangular background-yasuo">
+                    <div class="noticia-overlay"><h3>Ultimas Atualizações de Patch Notes</h3></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="noticias-container-fullwidth">
              <a href="news/noticia-4.html" class="noticia-link">
                 <div class="noticia-box-rectangular background-battlepass">
                     <div class="noticia-overlay"><h3>Battle Pass: Progresso e Caos</h3></div>
@@ -145,9 +154,7 @@
         </div>
     </main>
 
-</body>
-
-<footer>
+    <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h4>2XAcademy</h4>
@@ -160,8 +167,8 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="champions.html">Tier List</a></li>
-                    <li><a href="teams.html">Duplas</a></li>
-                    <li><a href="fuses.html">Fuses</a></li>
+                    <li><a href="teams.html">Melhores Duplas</a></li>
+                    <li><a href="fuses.html">Guia de Fuses</a></li>
                 </ul>
             </div>
 
@@ -184,4 +191,5 @@
         </div>
     </footer>
 
+</body>
 </html>

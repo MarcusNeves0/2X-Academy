@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Juggernaut - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .fuse-detail-container {
+            max-width: 1000px; margin: 40px auto; padding: 40px;
+            background: #2d3748; border-radius: 15px; border-left: 10px solid #d35400;
+            box-sizing: border-box;
+        }
+        .highlight-box {
+            background: #1a202c; padding: 25px; border-radius: 10px; margin: 20px 0;
+            border: 1px dashed #d35400;
+        }
+        
+        /* Grid de Times */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .team-suggestion {
+            display: flex; gap: 20px; align-items: center; background: #353b48;
+            padding: 20px; border-radius: 12px; border: 1px solid #4a5568;
+            transition: 0.3s;
+        }
+        .team-suggestion:hover { border-color: #d35400; transform: scale(1.02); }
+
+        .char-icons { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+        .team-suggestion img { width: 70px; height: 70px; border-radius: 12px; border: 2px solid #d35400; object-fit: cover; }
+        
+        .team-info h4 { color: #fff; margin: 0 0 10px 0; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
+        .team-info p { font-size: 0.9em; color: #cbd5e0; line-height: 1.4; margin: 0; }
+
+        h2 { color: #d35400; font-family: 'Russo One', sans-serif; text-transform: uppercase; margin-top: 40px; }
+        .tag-recap { color: #00f070; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="fuse-detail-container">
+            <h1>JUGGERNAUT</h1>
+            <p class="tag-recap">O Poder da Resiliência e Armadura.</p>
+
+            <div class="highlight-box">
+                <h2>O que ela faz?</h2>
+                <p>A Juggernaut é voltada para personagens pesados ou jogadores que gostam de "atropelar" o oponente. Ela concede propriedades de armadura e melhorias defensivas que permitem ignorar projéteis ou ataques leves durante certas ações.</p>
+                <ul>
+                    <li><strong>Impacto Blindado:</strong> Concede armadura (super armor) em ataques pesados específicos, permitindo absorver um hit e continuar o golpe.</li>
+                    <li><strong>Redução de Dano de Bloco:</strong> Diminui o dano sofrido ao defender ataques sucessivos (chip damage).</li>
+                    <li><strong>Pushblock Aprimorado:</strong> Melhora a mecânica de afastar o inimigo enquanto defende, gastando menos recursos ou criando mais distância.</li>
+                </ul>
+            </div>
+
+            <h2>Top 6 Times Sugeridos</h2>
+            
+            <div class="teams-grid">
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/braum.avif" alt="Braum">
+                        <img src="../champs/illaoi.avif" alt="Illaoi">
+                    </div>
+                    <div class="team-info">
+                        <h4>Braum + Illaoi</h4>
+                        <p>A "Parede de Aço". Braum protege com armadura enquanto Illaoi invoca tentáculos sem ser interrompida, criando um campo de batalha impenetrável.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/darius.avif" alt="Darius">
+                        <img src="../champs/vi.avif" alt="Vi">
+                    </div>
+                    <div class="team-info">
+                        <h4>Darius + Vi</h4>
+                        <p>Agressão imparável. Darius usa a armadura da Juggernaut para garantir que seus machados conectem, enquanto Vi entra com socos carregados protegidos.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/blitzcrank.avif" alt="Blitz">
+                        <img src="../champs/yasuo.avif" alt="Yasuo">
+                    </div>
+                    <div class="team-info">
+                        <h4>Blitzcrank + Yasuo</h4>
+                        <p>Entrada segura. A Juggernaut permite que o Blitzcrank tente puxões arriscados com mais segurança, absorvendo pokes leves durante a animação.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/warwick.avif" alt="Warwick">
+                        <img src="../champs/darius.avif" alt="Darius">
+                    </div>
+                    <div class="team-info">
+                        <h4>Warwick + Darius</h4>
+                        <p>Predadores de elite. Warwick pode saltar sobre projéteis com a estabilidade da Fuse, abrindo caminho para o dano bruto do Darius.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/illaoi.avif" alt="Illaoi">
+                        <img src="../champs/ekko.avif" alt="Ekko">
+                    </div>
+                    <div class="team-info">
+                        <h4>Illaoi + Ekko</h4>
+                        <p>Controle estável. Illaoi se beneficia da armadura para montar suas "traps" de tentáculo enquanto o Ekko fornece mobilidade para cobrir as brechas.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/braum.avif" alt="Braum">
+                        <img src="../champs/jinx.avif" alt="Jinx">
+                    </div>
+                    <div class="team-info">
+                        <h4>Braum + Jinx</h4>
+                        <p>Proteção do Hypercarry. Braum se torna um escudo humano muito mais eficaz com Juggernaut, dando todo o tempo do mundo para a Jinx disparar seus foguetes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Dica de Especialista</h2>
+            <p>A armadura da Juggernaut não é infinita! Ela geralmente absorve apenas um acerto por movimento. Contra personagens que batem muitas vezes rápido (multi-hits), tome cuidado para não ser interrompido no segundo golpe!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                    <li><a href="#">📧 Contato Profissional</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">
+                2XKO and all related properties are trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Double Down - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .fuse-detail-container {
+            max-width: 1000px; margin: 40px auto; padding: 40px;
+            background: #2d3748; border-radius: 15px; border-left: 10px solid #9b59b6;
+            box-sizing: border-box;
+        }
+        .highlight-box {
+            background: #1a202c; padding: 25px; border-radius: 10px; margin: 20px 0;
+            border: 1px dashed #9b59b6;
+        }
+        
+        /* Grid de Times */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .team-suggestion {
+            display: flex; gap: 20px; align-items: center; background: #353b48;
+            padding: 20px; border-radius: 12px; border: 1px solid #4a5568;
+            transition: 0.3s;
+        }
+        .team-suggestion:hover { border-color: #9b59b6; transform: scale(1.02); }
+
+        .char-icons { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+        .team-suggestion img { width: 70px; height: 70px; border-radius: 12px; border: 2px solid #9b59b6; object-fit: cover; }
+        
+        .team-info h4 { color: #fff; margin: 0 0 10px 0; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
+        .team-info p { font-size: 0.9em; color: #cbd5e0; line-height: 1.4; margin: 0; }
+
+        h2 { color: #9b59b6; font-family: 'Russo One', sans-serif; text-transform: uppercase; margin-top: 40px; }
+        .tag-recap { color: #00f070; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="fuse-detail-container">
+            <h1>DOUBLE DOWN</h1>
+            <p class="tag-recap">O dobro de poder, o dobro de impacto.</p>
+
+            <div class="highlight-box">
+                <h2>O que ela faz?</h2>
+                <p>A Double Down é a Fuse focada em finalização e dano explosivo. Ela quebra a limitação de usar apenas um Super por vez, permitindo que o personagem reserva entre no meio da animação para desferir sua própria Ultimate.</p>
+                <ul>
+                    <li><strong>Chain Supers:</strong> Cancele a animação do Super 1 diretamente no Super do seu parceiro.</li>
+                    <li><strong>Dano de Execução:</strong> Perfeita para garantir o nocaute em oponentes com 50% ou menos de vida.</li>
+                    <li><strong>Gasto de Recurso:</strong> Requer 2 barras de especial (uma para cada campeão), recompensando times que gerenciam bem a barra.</li>
+                </ul>
+            </div>
+
+            <h2>Top 6 Times Sugeridos</h2>
+            
+            <div class="teams-grid">
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/darius.avif" alt="Darius">
+                        <img src="../champs/braum.avif" alt="Braum">
+                    </div>
+                    <div class="team-info">
+                        <h4>Darius + Braum</h4>
+                        <p>O "Paredão de Sangue". Use a Guilhotina de Darius e cancele no Impacto Glacial do Braum para garantir que ninguém sobreviva ao choque térmico.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/jinx.avif" alt="Jinx">
+                        <img src="../champs/caitlyn.avif" alt="Caitlyn">
+                    </div>
+                    <div class="team-info">
+                        <h4>Jinx + Caitlyn</h4>
+                        <p>Dano de longa distância. O Super da Jinx joga o inimigo para o alto, facilitando o "tiro certeiro" da Caitlyn logo em seguida.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/illaoi.avif" alt="Illaoi">
+                        <img src="../champs/yasuo.avif" alt="Yasuo">
+                    </div>
+                    <div class="team-info">
+                        <h4>Illaoi + Yasuo</h4>
+                        <p>Combo de área massivo. Enquanto os tentáculos da Illaoi batem, o Yasuo entra com o Último Suspiro para manter o inimigo no ar e dobrar o dano.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/vi.avif" alt="Vi">
+                        <img src="../champs/ekko.avif" alt="Ekko">
+                    </div>
+                    <div class="team-info">
+                        <h4>Vi + Ekko</h4>
+                        <p>Controle temporal agressivo. A Vi imobiliza o alvo com o seu Super de impacto e o Ekko entra rebobinando para causar dano extra.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/blitzcrank.avif" alt="Blitz">
+                        <img src="../champs/warwick.avif" alt="Warwick">
+                    </div>
+                    <div class="team-info">
+                        <h4>Blitzcrank + Warwick</h4>
+                        <p>Time de captura. O Blitzcrank silencia com o Campo Estático, dando tempo livre para o Warwick finalizar com a Caçada Sangrenta.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/ahri.avif" alt="Ahri">
+                        <img src="../champs/teemo.avif" alt="Teemo">
+                    </div>
+                    <div class="team-info">
+                        <h4>Ahri + Teemo</h4>
+                        <p>Dano de condição. Combine o charme místico da Ahri com o veneno explosivo do Teemo para uma finalização irritante e letal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Dica de Especialista</h2>
+            <p>Nem sempre você precisa gastar as duas barras. Use a Double Down apenas se tiver certeza de que a vida do oponente vai chegar a zero. Caso contrário, você pode ficar sem recursos para defender o próximo round!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                    <li><a href="#">📧 Contato Profissional</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">
+                2XKO and all related properties are trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Fury - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .fuse-detail-container {
+            max-width: 1000px; margin: 40px auto; padding: 40px;
+            background: #2d3748; border-radius: 15px; border-left: 10px solid #f1c40f;
+            box-sizing: border-box;
+        }
+        .highlight-box {
+            background: #1a202c; padding: 25px; border-radius: 10px; margin: 20px 0;
+            border: 1px dashed #f1c40f;
+        }
+        
+        /* Grid de Times */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .team-suggestion {
+            display: flex; gap: 20px; align-items: center; background: #353b48;
+            padding: 20px; border-radius: 12px; border: 1px solid #4a5568;
+            transition: 0.3s;
+        }
+        .team-suggestion:hover { border-color: #f1c40f; transform: scale(1.02); }
+
+        .char-icons { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+        .team-suggestion img { width: 70px; height: 70px; border-radius: 12px; border: 2px solid #f1c40f; object-fit: cover; }
+        
+        .team-info h4 { color: #fff; margin: 0 0 10px 0; font-family: 'Russo One', sans-serif; text-transform: uppercase; }
+        .team-info p { font-size: 0.9em; color: #cbd5e0; line-height: 1.4; margin: 0; }
+
+        h2 { color: #f1c40f; font-family: 'Russo One', sans-serif; text-transform: uppercase; margin-top: 40px; }
+        .tag-recap { color: #00f070; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="fuse-detail-container">
+            <h1>FURY</h1>
+            <p class="tag-recap">O Poder da Vingança e do Comeback.</p>
+
+            <div class="highlight-box">
+                <h2>O que ela faz?</h2>
+                <p>A Fury recompensa jogadores que conseguem manter a calma sob pressão. Ela concede bônus passivos que aumentam conforme a saúde da sua dupla diminui, tornando seus ataques muito mais letais no final da partida.</p>
+                <ul>
+                    <li><strong>Dano de Revanche:</strong> Aumenta o dano causado em até 20% quando o personagem ativo está com menos de 30% de vida.</li>
+                    <li><strong>Geração de Barra:</strong> Você ganha medidor de especial de forma passiva e mais rápida quando está sofrendo pressão ou com vida baixa.</li>
+                    <li><strong>Ataques EX Potencializados:</strong> Reduz levemente o custo de recursos para golpes especiais fortalecidos durante o estado de fúria.</li>
+                </ul>
+            </div>
+
+            <h2>Top 6 Times Sugeridos</h2>
+            
+            <div class="teams-grid">
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/illaoi.avif" alt="Illaoi">
+                        <img src="../champs/braum.avif" alt="Braum">
+                    </div>
+                    <div class="team-info">
+                        <h4>Illaoi + Braum</h4>
+                        <p>O "time imortal". A Illaoi se torna uma máquina de destruição com o bônus de dano da Fury, enquanto o Braum garante que ela sobreviva tempo suficiente com pouca vida para usar esse poder.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/darius.avif" alt="Darius">
+                        <img src="../champs/yasuo.avif" alt="Yasuo">
+                    </div>
+                    <div class="team-info">
+                        <h4>Darius + Yasuo</h4>
+                        <p>Dano bruto multiplicado. Um Darius com vida baixa e bônus de Fury pode finalizar um oponente com apenas dois ou três acertos bem colocados.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/vi.avif" alt="Vi">
+                        <img src="../champs/warwick.avif" alt="Warwick">
+                    </div>
+                    <div class="team-info">
+                        <h4>Vi + Warwick</h4>
+                        <p>Caçadores implacáveis. A Fury permite que esses dois personagens de curta distância virem o jogo rapidamente após uma leitura correta da defesa inimiga.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/jinx.avif" alt="Jinx">
+                        <img src="../champs/ekko.avif" alt="Ekko">
+                    </div>
+                    <div class="team-info">
+                        <h4>Jinx + Ekko</h4>
+                        <p>Finalização caótica. O bônus de dano ajuda a Jinx a derreter barras de vida com seus foguetes, enquanto o Ekko usa a barra extra para manter sua mobilidade e segurança.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/caitlyn.avif" alt="Caitlyn">
+                        <img src="../champs/blitzcrank.avif" alt="Blitz">
+                    </div>
+                    <div class="team-info">
+                        <h4>Caitlyn + Blitzcrank</h4>
+                        <p>Defesa punitiva. Se o oponente for muito ganancioso tentando finalizar a Caitlyn, o bônus de Fury dela garante que o contra-ataque seja fatal.</p>
+                    </div>
+                </div>
+
+                <div class="team-suggestion">
+                    <div class="char-icons">
+                        <img src="../champs/ahri.avif" alt="Ahri">
+                        <img src="../champs/teemo.avif" alt="Teemo">
+                    </div>
+                    <div class="team-info">
+                        <h4>Ahri + Teemo</h4>
+                        <p>Venenos e Magia. O dano ao longo do tempo (DoT) do Teemo e os combos da Ahri ganham um peso extra absurdo quando a Fuse Fury está ativa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Dica de Especialista</h2>
+            <p>A Fury não é apenas sobre bater mais forte, é sobre paciência. Não se desespere quando sua vida estiver baixa; use os recursos extras de barra para forçar o erro do oponente e punir com o dano aumentado!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                    <li><a href="#">📧 Contato Profissional</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">
+                2XKO and all related properties are trademarks of Riot Games, Inc.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
