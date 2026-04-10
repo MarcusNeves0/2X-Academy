@@ -3,153 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking de Campeões - 2XAcademy</title>
+    <title>Tier List de Campeões - 2XAcademy</title>
     <link rel="stylesheet" href="style.css">
-    
     <style>
-        /* --- ESTILO ESPECÍFICO DA TIER LIST --- */
-        .tierlist-container { 
-            width: 100%; 
-            max-width: 1000px; 
+        .tier-list-container {
+            max-width: 1000px;
             margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .tier-row { 
-            display: flex; 
-            margin-bottom: 20px; 
-            background-color: #353b48; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            min-height: 120px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .tier-label { 
-            flex-shrink: 0; 
-            width: 100px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            font-family: 'Russo One', sans-serif; 
-            font-size: 3.5em; 
-            font-weight: bold; 
-            color: white; 
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        .page-header h2 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.5em;
+            color: #fff;
+            text-transform: uppercase;
         }
 
-        /* Cores oficiais dos Ranks */
-        .tier-s .tier-label { background-color: #e84118; } /* Vermelho S */
-        .tier-a .tier-label { background-color: #0097e6; } /* Azul A */
-        .tier-b .tier-label { background-color: #fbc531; } /* Amarelo B */
-        .tier-c .tier-label { background-color: #4cd137; } /* Verde C */
-        .tier-d .tier-label { background-color: #8c8c8c; } /* Cinza D */
+        /* --- ESTILO DA LINHA DE TIER (BASEADO NA IMAGE_D57463) --- */
+        .tier-row {
+            display: flex;
+            background-color: #252a35; /* Fundo escuro do card */
+            border-radius: 12px;
+            overflow: hidden;
+            align-items: stretch;
+            min-height: 140px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
 
-        .champion-portraits { 
-            display: flex; 
-            flex-wrap: wrap; 
-            padding: 20px; 
-            gap: 20px; 
+        /* Bloco do Rank (S, A, B, C) */
+        .tier-rank {
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Russo One', sans-serif;
+            font-size: 3.5em;
+            color: #fff;
+            flex-shrink: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Cores dos Ranks */
+        .rank-s { background-color: #ff4655; } /* Vermelho */
+        .rank-a { background-color: #0097e6; } /* Azul */
+        .rank-b { background-color: #fbc531; } /* Amarelo/Laranja */
+        .rank-c { background-color: #4cd137; } /* Verde */
+        .rank-d { background-color: #718096; } /* Cinza */
+
+        /* Contêiner dos Campeões */
+        .tier-champions {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 30px;
+            gap: 25px;
             align-items: center;
         }
 
-        /* LINKS E CARDS DOS CAMPEÕES */
-        .champion-link {
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s ease;
-        }
-
-        .champion-link:hover {
-            transform: translateY(-8px);
-        }
-
-        .champion-card { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            width: 85px; 
-        }
-
-        .champion-card img { 
-            width: 80px; 
-            height: 80px; 
-            border: 3px solid rgba(255, 255, 255, 0.8); 
-            border-radius: 10px; 
-            object-fit: cover;
-            background-color: #1a202c;
-            transition: all 0.3s;
-        }
-
-        .champion-link:hover img {
-            border-color: #00f070; /* Verde Neon ao passar o mouse */
-            box-shadow: 0 0 15px rgba(0, 240, 112, 0.5);
-        }
-
-        .champion-name {
-            font-size: 0.8em;
-            margin-top: 8px;
-            color: #e2e8f0;
-            font-weight: bold;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* --- RODAPÉ MASTER INTEGRADO --- */
-        footer {
-            width: 100%;
-            background-color: #111827;
-            color: #e2e8f0;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-            border-top: 4px solid #00f070;
+        /* Item Individual do Campeão */
+        .champ-link {
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            width: 85px;
         }
 
-        .footer-container {
+        .champ-link:hover {
+            transform: scale(1.1);
+        }
+
+        .champ-img-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px; /* Cantos levemente arredondados como na imagem */
+            overflow: hidden;
+            border: 2px solid #4a5568;
+            background-color: #1a202c;
+        }
+
+        .champ-img-container img {
             width: 100%;
-            max-width: 1100px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-            padding: 0 20px;
-            box-sizing: border-box;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .footer-section { flex: 1; min-width: 280px; }
-        .footer-section h4 { color: #00f070; font-family: 'Russo One', sans-serif; margin-bottom: 20px; text-transform: uppercase; }
-        .footer-section p { font-size: 0.95em; color: #cbd5e0; line-height: 1.6; }
-
-        .footer-links { list-style: none; padding: 0; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #e2e8f0; text-decoration: none; transition: 0.3s; display: block; }
-        .footer-links a:hover { color: #00f070; padding-left: 8px; }
-
-        .catchphrase {
+        .champ-name {
+            margin-top: 8px;
+            color: #cbd5e0;
+            font-size: 0.75em;
             font-family: 'Russo One', sans-serif;
-            font-size: 1.5em;
-            color: #00f070;
-            margin-top: 40px;
             text-transform: uppercase;
-            letter-spacing: 2px;
             text-align: center;
+            letter-spacing: 0.5px;
         }
 
-        .footer-bottom {
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid #374151;
-            width: 100%;
-            max-width: 1100px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #9ca3af;
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .tier-rank { width: 70px; font-size: 2.5em; }
+            .tier-champions { padding: 15px; gap: 15px; }
+            .champ-img-container { width: 60px; height: 60px; }
         }
-
-        .disclaimer-alerta { color: #fca5a5; font-weight: bold; margin-bottom: 10px; display: block; font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -165,70 +127,87 @@
     </header>
 
     <main>
-        <h2>Tier List de Campeões (Meta Atual)</h2>
-        
-        <div class="tierlist-container">
+        <div class="page-header">
+            <h2>Tier List - Akali Patch</h2>
+        </div>
+
+        <div class="tier-list-container">
             
-            <div class="tier-row tier-s">
-                <div class="tier-label">S</div>
-                <div class="champion-portraits">
-                    <a href="champs/vi.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/vi.avif"><div class="champion-name">Vi</div></div>
+            <div class="tier-row">
+                <div class="tier-rank rank-s">S</div>
+                <div class="tier-champions">
+                    <a href="champs/akali.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/akali.avif" alt="Akali"></div>
+                        <span class="champ-name">Akali</span>
                     </a>
-                    <a href="champs/caitlyn.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/caitlyn.avif"><div class="champion-name">Caitlyn</div></div>
+                    <a href="champs/jinx.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/jinx.avif" alt="Jinx"></div>
+                        <span class="champ-name">Jinx</span>
                     </a>
-                    <a href="champs/yasuo.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/yasuo.avif"><div class="champion-name">Yasuo</div></div>
+                    <a href="champs/caitlyn.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/caitlyn.avif" alt="Caitlyn"></div>
+                        <span class="champ-name">Caitlyn</span>
                     </a>
-                    <a href="champs/jinx.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/jinx.avif"><div class="champion-name">Jinx</div></div>
-                    </a>
-                    <a href="champs/warwick.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/warwick.avif"><div class="champion-name">Warwick</div></div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="tier-row tier-a">
-                <div class="tier-label">A</div>
-                <div class="champion-portraits">
-                    <a href="champs/illaoi.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/illaoi.avif"><div class="champion-name">Illaoi</div></div>
-                    </a>
-                    <a href="champs/ekko.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/ekko.avif"><div class="champion-name">Ekko</div></div>
-                    </a>
-                    <a href="champs/teemo.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/teemo.avif"><div class="champion-name">Teemo</div></div>
+                    <a href="champs/ahri.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/ahri.avif" alt="Ahri"></div>
+                        <span class="champ-name">Ahri</span>
                     </a>
                 </div>
             </div>
 
-            <div class="tier-row tier-b">
-                <div class="tier-label">B</div>
-                <div class="champion-portraits">
-                    <a href="champs/braum.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/braum.avif"><div class="champion-name">Braum</div></div>
+            <div class="tier-row">
+                <div class="tier-rank rank-a">A</div>
+                <div class="tier-champions">
+                    <a href="champs/warwick.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/warwick.avif" alt="Warwick"></div>
+                        <span class="champ-name">Warwick</span>
                     </a>
-                    <a href="champs/blitzcrank.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/blitzcrank.avif"><div class="champion-name">Blitz</div></div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="tier-row tier-c">
-                <div class="tier-label">C</div>
-                <div class="champion-portraits">
-                    <a href="champs/ahri.html" class="champion-link">
-                        <div class="champion-card"><img src="champs/ahri.avif"><div class="champion-name">Ahri</div></div>
+                    <a href="champs/braum.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/braum.avif" alt="Braum"></div>
+                        <span class="champ-name">Braum</span>
                     </a>
                 </div>
             </div>
 
-            <div class="tier-row tier-d">
-                <div class="tier-label">D</div>
-                <div class="champion-portraits">
+            <div class="tier-row">
+                <div class="tier-rank rank-b">B</div>
+                <div class="tier-champions">
+                    <a href="champs/blitzcrank.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/blitzcrank.avif" alt="Blitz"></div>
+                        <span class="champ-name">Blitz</span>
+                    </a>
+                    <a href="champs/ekko.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/ekko.avif" alt="Ekko"></div>
+                        <span class="champ-name">Ekko</span>
+                    </a>
+                    <a href="champs/teemo.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/teemo.avif" alt="Teemo"></div>
+                        <span class="champ-name">Teemo</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-row">
+                <div class="tier-rank rank-c">C</div>
+                <div class="tier-champions">
+                    <a href="champs/yasuo.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/yasuo.avif" alt="Yasuo"></div>
+                        <span class="champ-name">Yasuo</span>
+                    </a>
+                    <a href="champs/darius.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/darius.avif" alt="Darius"></div>
+                        <span class="champ-name">Darius</span>
+                    </a>
+                    <a href="champs/illaoi.html" class="champ-link">
+                        <div class="champ-img-container"><img src="champs/illaoi.avif" alt="Illaoi"></div>
+                        <span class="champ-name">Illaoi</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tier-row">
+                <div class="tier-rank rank-d">D</div>
+                <div class="tier-champions">
                     </div>
             </div>
 
@@ -240,9 +219,8 @@
             <div class="footer-section">
                 <h4>2XAcademy</h4>
                 <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
-                <p>O Laboratório de Runeterra não para. Estude frames, domine combos e suba de elo conosco.</p>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
             </div>
-
             <div class="footer-section">
                 <h4>Acesso Rápido</h4>
                 <ul class="footer-links">
@@ -252,23 +230,17 @@
                     <li><a href="fuses.html">Guia de Fuses</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h4>Desenvolvedor</h4>
                 <ul class="footer-links">
                     <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
-                    <li><a href="#">📧 Contato Profissional</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
-            <p style="margin-top: 8px; font-size: 0.85em;">
-                2XKO and all related properties are trademarks of Riot Games, Inc.
-            </p>
+            <p style="margin-top: 8px; font-size: 0.8em;">2XKO and all related properties are trademarks of Riot Games, Inc.</p>
         </div>
     </footer>
 

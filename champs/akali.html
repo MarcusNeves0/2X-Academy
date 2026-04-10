@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akali - Guia de Campeão - 2XAcademy</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .champ-detail-container { 
+            max-width: 1000px; margin: 40px auto; padding: 40px; 
+            background: #2d3748; border-radius: 15px; 
+            border-left: 10px solid #00f070; box-sizing: border-box;
+        }
+
+        .champ-header { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .champ-header img { width: 320px; border-radius: 15px; border: 4px solid #00f070; }
+        .champ-info h1 { font-family: 'Russo One', sans-serif; font-size: 3.5em; margin: 0; color: #fff; text-transform: uppercase; }
+        .champ-tag { color: #00f070; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+
+        .section-title-line {
+            font-family: 'Russo One', sans-serif; color: #fff; font-size: 1.8em;
+            margin-top: 40px; border-bottom: 3px solid #ff4655;
+            display: inline-block; padding-bottom: 5px; margin-bottom: 25px;
+        }
+
+        /* --- TABELA DE ATAQUES --- */
+        .move-table { width: 100%; border-collapse: collapse; background: #1a202c; border-radius: 10px; overflow: hidden; margin-bottom: 40px; }
+        .move-table th { background: #252a35; color: #a0aec0; text-align: left; padding: 15px; font-size: 0.8em; text-transform: uppercase; }
+        .move-table td { padding: 15px; border-bottom: 1px solid #2d3748; color: #cbd5e0; vertical-align: middle; }
+
+        /* Ícones Circulares de Botão */
+        .btn-icon {
+            width: 24px; height: 24px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 0.75em; color: #000; margin: 0 3px;
+            text-shadow: none; vertical-align: middle;
+        }
+        .l-icon { background: #a0aec0; } /* Cinza */
+        .m-icon { background: #f6ad55; } /* Laranja/Amarelo */
+        .h-icon { background: #f687b3; } /* Rosa/Vermelho */
+        .s1-icon { background: #63b3ed; color: #fff; } /* Azul */
+        .s2-icon { background: #d53f8c; color: #fff; } /* Roxo */
+
+        .command-arrow { color: #fff; font-size: 1.1em; margin-right: 2px; font-weight: bold; vertical-align: middle; }
+
+        /* --- BIBLIOTECA DE COMBOS (ESTILO IMAGE_D57C42) --- */
+        .combo-container { background: #1a202c; padding: 30px; border-radius: 12px; border-left: 5px solid #00f070; }
+        .combo-card { background: #252a35; padding: 25px; border-radius: 10px; margin-bottom: 20px; }
+        
+        .combo-notation { 
+            font-family: 'Russo One', sans-serif; color: #f1c40f; 
+            background: #000; padding: 15px 25px; border-radius: 8px; 
+            display: inline-flex; align-items: center; flex-wrap: wrap;
+            margin-bottom: 15px; font-size: 1.1em; gap: 5px;
+            letter-spacing: 1px;
+        }
+        .combo-desc { color: #cbd5e0; font-size: 0.95em; line-height: 1.6; margin-top: 10px; }
+
+        @media (max-width: 768px) { .champ-header img { width: 100%; } .move-table { font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2XAcademy</h1>
+        <nav class="navegacao">
+            <a href="../index.html" class="nav-botao">Início</a>
+            <a href="../champions.html" class="nav-botao">Campeões</a>
+            <a href="../teams.html" class="nav-botao">Melhores Duplas</a>
+            <a href="../fuses.html" class="nav-botao">Fuses</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="champ-detail-container">
+            <div class="champ-header">
+                <img src="akali.avif" alt="Akali">
+                <div class="champ-info">
+                    <span class="champ-tag">Assassina / Mix-up / Mobilidade</span>
+                    <h1>AKALI</h1>
+                    <p>Akali dita o ritmo da luta com sua agilidade e fumaça. Ideal para jogadores que gostam de confundir o oponente e realizar pressões imbloqueáveis.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title-line">Ataques Normais Chave</h2>
+            <table class="move-table">
+                <thead>
+                    <tr><th style="width: 20%;">INPUT</th><th style="width: 30%;">NOME</th><th>USO PRINCIPAL</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="btn-icon l-icon">L</span></td>
+                        <td>Corte Rápido</td>
+                        <td>Poke seguro e o melhor botão para "mashar" fora de pressões.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="btn-icon m-icon">M</span></td>
+                        <td>Chute de Kama</td>
+                        <td>Excelente alcance horizontal. Inicia a maioria das rotas BnB.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="btn-icon h-icon">H</span></td>
+                        <td>Giro Acrobático</td>
+                        <td>Múltiplos hits. Perfeito para confirmar combos no ar.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="command-arrow">↓</span> + <span class="btn-icon h-icon">H</span></td>
+                        <td>Corte Ascendente</td>
+                        <td>O Launcher clássico. Mantenha pressionado para saltar junto.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title-line">Habilidades Especiais</h2>
+            <table class="move-table">
+                <thead>
+                    <tr><th style="width: 20%;">COMANDO</th><th style="width: 30%;">HABILIDADE</th><th>DESCRIÇÃO</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="command-arrow">↓↘→</span> + <span class="btn-icon s1-icon">S1</span></td>
+                        <td>Golpe de Cinco Pontas</td>
+                        <td>Controle de zona. Pode ser usado no ar para alterar a trajetória.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="command-arrow">↓↙←</span> + <span class="btn-icon s1-icon">S1</span></td>
+                        <td>Proteção do Crepúsculo</td>
+                        <td>Cria a fumaça. Garante mix-ups de high/low invisíveis.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="command-arrow">↓↘→</span> + <span class="btn-icon s2-icon">S2</span></td>
+                        <td>Investida Shuriken</td>
+                        <td>Principal ferramenta de aproximação. Marca o oponente para o recast.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title-line">Biblioteca de Combos</h2>
+            <div class="combo-container">
+                
+                <div class="combo-card">
+                    <div class="combo-notation">
+                        5 <span class="btn-icon l-icon">L</span> > 
+                        5 <span class="btn-icon m-icon">M</span> > 
+                        5 <span class="btn-icon h-icon">H</span> > 
+                        236 <span class="btn-icon l-icon">L</span>
+                    </div>
+                    <p class="combo-desc">Combo básico de solo para confirmação rápida de dano e manutenção de pressão.</p>
+                </div>
+
+                <div class="combo-card">
+                    <div class="combo-notation">
+                        2 <span class="btn-icon m-icon">M</span> > 
+                        5 <span class="btn-icon m-icon">M</span> > 
+                        3 <span class="btn-icon h-icon">H</span> > 
+                        j.<span class="btn-icon l-icon">L</span> > 
+                        j.<span class="btn-icon m-icon">M</span> > 
+                        j.214 <span class="btn-icon h-icon">H</span>
+                    </div>
+                    <p class="combo-desc">Combo aéreo padrão para maximizar o tempo de tela do oponente e levar ao canto.</p>
+                </div>
+
+                <div class="combo-card">
+                    <div class="combo-notation">
+                        5 <span class="btn-icon h-icon">H</span> > 
+                        236 <span class="btn-icon s2-icon">S2</span> > 
+                        <span class="btn-icon l-icon">L</span> (Recast) > 
+                        j.<span class="btn-icon h-icon">H</span> > 
+                        214 <span class="btn-icon s1-icon">S1</span>
+                    </div>
+                    <p class="combo-desc">Utiliza a Investida Shuriken para aproximação e finaliza com a fumaça para um reset seguro.</p>
+                </div>
+
+                <div class="combo-card">
+                    <div class="combo-notation">
+                        3 <span class="btn-icon h-icon">H</span> > 
+                        j.<span class="btn-icon l-icon">L</span> > 
+                        j.<span class="btn-icon m-icon">M</span> > 
+                        Assist > 
+                        j.236 <span class="btn-icon s1-icon">S1</span> > 
+                        236236 <span class="btn-icon s1-icon">S1</span>
+                    </div>
+                    <p class="combo-desc">Combo avançado com assistência que permite converter em Super Nível 3 para dano massivo.</p>
+                </div>
+
+                <div class="combo-card">
+                    <div class="combo-notation">
+                        214 <span class="btn-icon s1-icon">S1</span> > 
+                        Dash > 
+                        5 <span class="btn-icon m-icon">M</span> > 
+                        236 <span class="btn-icon s2-icon">S2</span> > 
+                        Super
+                    </div>
+                    <p class="combo-desc">Setup de fumaça: utilize a invisibilidade para iniciar com um Dash surpreendente e confirmar no Super.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>2XAcademy</h4>
+                <span class="disclaimer-alerta">⚠️ SITE NÃO OFICIAL</span>
+                <p>Este é um projeto de fã dedicado ao estudo e desenvolvimento da comunidade de 2XKO. O lab nunca para.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Acesso Rápido</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../champions.html">Tier List</a></li>
+                    <li><a href="../teams.html">Melhores Duplas</a></li>
+                    <li><a href="../fuses.html">Guia de Fuses</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Desenvolvedor</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/MarcusNeves0" target="_blank">📂 Meu GitHub (Projetos)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="catchphrase">O Lab nunca para. Treine como uma lenda.</div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 2XAcademy | Desenvolvido por Marcus Neves.</p>
+            <p style="margin-top: 8px; font-size: 0.8em;">2XKO and all related properties are trademarks of Riot Games, Inc.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
