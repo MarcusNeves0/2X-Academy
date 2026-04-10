@@ -3,124 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Sinergia - 2XAcademy</title>
+    <title>Melhores Duplas - 2XAcademy</title>
     <link rel="stylesheet" href="style.css">
-    
     <style>
-        .teams-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; }
-        
-        .page-header { text-align: center; margin-bottom: 50px; }
-        .page-header h2 { font-family: 'Russo One', sans-serif; font-size: 3em; color: #fff; text-transform: uppercase; }
-        .page-header p { color: #cbd5e0; margin-top: 10px; font-size: 1.1em; }
-
-        /* Estrutura da Linha de Tier */
-        .tier-row {
+        .teams-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
             display: flex;
-            align-items: stretch; /* Garante que a barra lateral estique com os cards */
-            background-color: #252a35;
-            margin-bottom: 35px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            flex-direction: column;
+            gap: 40px; /* Espaço entre os blocos de Tier */
         }
 
-        /* Barra Lateral de Letra */
+        .page-header { text-align: center; margin-bottom: 20px; }
+        .page-header h2 { font-family: 'Russo One', sans-serif; font-size: 2.8em; color: #fff; text-transform: uppercase; }
+
+        /* --- CONTAINER DO TIER --- */
+        .tier-row {
+            display: flex;
+            background-color: #252a35;
+            border-radius: 15px;
+            overflow: hidden;
+            align-items: stretch;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            min-height: 500px; /* Garante que todos os rankings tenham tamanho similar */
+        }
+
+        /* Lateral do Rank */
         .tier-label {
-            width: 110px;
+            width: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Russo One', sans-serif;
-            font-size: 4.5em;
-            color: white;
+            font-size: 4em;
+            color: #fff;
             flex-shrink: 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
         }
 
-        /* Cores dos Ranks */
-        .tier-s .tier-label { background-color: #e84118; }
-        .tier-a .tier-label { background-color: #0097e6; }
-        .tier-b .tier-label { background-color: #fbc531; }
-        .tier-c .tier-label { background-color: #4cd137; }
-        .tier-d .tier-label { background-color: #8c8c8c; }
+        .rank-s { background-color: #e84118; }
+        .rank-a { background-color: #0097e6; }
+        .rank-b { background-color: #fbc531; }
+        .rank-c { background-color: #4cd137; }
 
-        /* Área dos Cards */
-        .tier-content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 25px;
+        /* Grid de Duplas */
+        .duo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            flex-grow: 1;
-            justify-content: flex-start;
+            padding: 30px;
+            width: 100%;
         }
 
-        /* Card Padronizado */
-        .team-card {
+        /* --- CARD DA DUPLA --- */
+        .duo-card {
             background-color: #1a202c;
             border: 1px solid #4a5568;
             border-radius: 12px;
-            width: 320px; /* Tamanho fixo para todos ficarem iguais */
             padding: 20px;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
             transition: 0.3s;
         }
 
-        .team-card:hover {
-            border-color: #00f070;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 240, 112, 0.2);
+        .duo-card:hover { border-color: #ff4655; transform: scale(1.02); }
+
+        .duo-portraits { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+        .duo-portraits img { width: 65px; height: 65px; border-radius: 8px; border: 2px solid #4a5568; object-fit: cover; }
+        .duo-separator { color: #00f070; font-family: 'Russo One', sans-serif; font-size: 1.2em; }
+
+        .duo-name { font-family: 'Russo One', sans-serif; color: #fff; font-size: 1.2em; text-transform: uppercase; margin: 0; }
+        .fuse-text { color: #ff4655; font-weight: bold; font-size: 0.8em; text-transform: uppercase; margin: 5px 0 15px 0; letter-spacing: 1px; }
+
+        .duo-highlight { color: #00f070; font-weight: bold; font-size: 0.9em; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+        .duo-desc { color: #cbd5e0; font-size: 0.85em; line-height: 1.5; margin: 0; }
+
+        @media (max-width: 900px) {
+            .duo-grid { grid-template-columns: 1fr; }
+            .tier-row { flex-direction: column; min-height: auto; }
+            .tier-label { width: 100%; height: 60px; font-size: 2.5em; }
         }
-
-        .team-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .team-visual img {
-            width: 75px;
-            height: 75px;
-            border-radius: 10px;
-            border: 2px solid #4a5568;
-            object-fit: cover;
-        }
-
-        .vs-text { color: #00f070; font-family: 'Russo One', sans-serif; font-size: 1.1em; }
-
-        .team-title {
-            text-align: center;
-            font-family: 'Russo One', sans-serif;
-            color: #fff;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-        }
-
-        .fuse-tag {
-            text-align: center;
-            color: #ff007f;
-            font-weight: bold;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .team-desc {
-            font-size: 0.85em;
-            color: #cbd5e0;
-            line-height: 1.5;
-            border-top: 1px solid #2d3748;
-            padding-top: 15px;
-            flex-grow: 1;
-        }
-
-        .pros { color: #00f070; font-weight: bold; margin-bottom: 4px; display: block; }
-        .cons { color: #fca5a5; font-weight: bold; margin-bottom: 4px; display: block; }
     </style>
 </head>
 <body>
@@ -137,130 +102,144 @@
 
     <main class="teams-container">
         <div class="page-header">
-            <h2>Análise de Sinergia</h2>
-            <p>O guia definitivo para as melhores (e piores) duplas do meta atual.</p>
+            <h2>Melhores Composições - Patch Akali</h2>
         </div>
 
-        <div class="tier-row tier-s">
-            <div class="tier-label">S</div>
-            <div class="tier-content">
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/vi.avif"><span class="vs-text">&</span><img src="champs/jinx.avif"></div>
-                    <div class="team-title">Arcane Sisters</div>
-                    <span class="fuse-tag">FUSE: FREESTYLE</span>
-                    <div class="team-desc"><span class="pros">✓ Pressão infinita.</span>Sinergia de controle de longa distância e punição pesada no canto. É o time mais equilibrado.</div>
+        <div class="tier-row">
+            <div class="tier-label rank-s">S</div>
+            <div class="duo-grid">
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/akali.avif"><span class="duo-separator">&</span><img src="champs/ekko.avif"></div>
+                    <h3 class="duo-name">WIND & TIME</h3>
+                    <span class="fuse-text">FUSE: 2X ASSIST</span>
+                    <p class="duo-highlight">✓ Mix-ups de elite.</p>
+                    <p class="duo-desc">Maior teto de habilidade do jogo. Ekko abre a guarda com clones enquanto Akali destrói com combos longos.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/yasuo.avif"><span class="vs-text">&</span><img src="champs/ekko.avif"></div>
-                    <div class="team-title">Wind & Time</div>
-                    <span class="fuse-tag">FUSE: 2X ASSIST</span>
-                    <div class="team-desc"><span class="pros">✓ Mix-ups de elite.</span>Maior teto de habilidade. Ekko abre a guarda e Yasuo destrói com combos longos.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/jinx.avif"><span class="duo-separator">&</span><img src="champs/ahri.avif"></div>
+                    <h3 class="duo-name">ARCANE SISTERS</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Pressão infinita.</p>
+                    <p class="duo-desc">Sinergia de controle de longa distância e punição pesada. É o time mais equilibrado para dominar o neutro.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/darius.avif"><span class="vs-text">&</span><img src="champs/warwick.avif"></div>
-                    <div class="team-title">Bloody Hunt</div>
-                    <span class="fuse-tag">FUSE: DOUBLE DOWN</span>
-                    <div class="team-desc"><span class="pros">✓ Dano explosivo.</span>Darius aplica sangramento e a velocidade do Warwick impede qualquer chance de recuperação.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/akali.avif"><span class="duo-separator">&</span><img src="champs/ahri.avif"></div>
+                    <h3 class="duo-name">SHADOW & SIGHT</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Mobilidade extrema.</p>
+                    <p class="duo-desc">Incapaz de ser rastreado. Ahri mantém o oponente em blockstring enquanto Akali prepara o Shuriken letal.</p>
+                </div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/darius.avif"><span class="duo-separator">&</span><img src="champs/warwick.avif"></div>
+                    <h3 class="duo-name">BLOODY HUNT</h3>
+                    <span class="fuse-text">FUSE: DOUBLE DOWN</span>
+                    <p class="duo-highlight">✓ Dano explosivo.</p>
+                    <p class="duo-desc">Darius aplica sangramento e a velocidade do Warwick impede qualquer chance de recuperação.</p>
                 </div>
             </div>
         </div>
 
-        <div class="tier-row tier-a">
-            <div class="tier-label">A</div>
-            <div class="tier-content">
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/illaoi.avif"><span class="vs-text">&</span><img src="champs/braum.avif"></div>
-                    <div class="team-title">The Wall</div>
-                    <span class="fuse-tag">FUSE: JUGGERNAUT</span>
-                    <div class="team-desc"><span class="pros">✓ Defesa e Controle.</span>Braum garante a segurança total para que Illaoi monte seu exército de tentáculos.</div>
+        <div class="tier-row">
+            <div class="tier-label rank-a">A</div>
+            <div class="duo-grid">
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/caitlyn.avif"><span class="duo-separator">&</span><img src="champs/ahri.avif"></div>
+                    <h3 class="duo-name">HIGH SOCIETY</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Zoneamento total.</p>
+                    <p class="duo-desc">Caitlyn controla a tela inteira. Ahri serve como um "anti-air" perfeito para quem tenta pular armadilhas.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/ahri.avif"><span class="vs-text">&</span><img src="champs/caitlyn.avif"></div>
-                    <div class="team-title">Piltover Charm</div>
-                    <span class="fuse-tag">FUSE: SIDEKICK</span>
-                    <div class="team-desc"><span class="pros">✓ Controle à distância.</span>Induz ao erro com o charme e pune com tiros globais certeiros.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/akali.avif"><span class="duo-separator">&</span><img src="champs/jinx.avif"></div>
+                    <h3 class="duo-name">STREET SMARTS</h3>
+                    <span class="fuse-text">FUSE: 2X ASSIST</span>
+                    <p class="duo-highlight">✓ Cobertura agressiva.</p>
+                    <p class="duo-desc">Jinx fornece suporte de projéteis para que a Akali consiga entrar com segurança através da fumaça.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/teemo.avif"><span class="vs-text">&</span><img src="champs/blitzcrank.avif"></div>
-                    <div class="team-title">Annoying Hook</div>
-                    <span class="fuse-tag">FUSE: PULSE</span>
-                    <div class="team-desc"><span class="pros">✓ Controle Mental.</span>Teemo enche o chão de minas enquanto Blitz força o erro com o puxão.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/warwick.avif"><span class="duo-separator">&</span><img src="champs/braum.avif"></div>
+                    <h3 class="duo-name">FISTS & FROST</h3>
+                    <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
+                    <p class="duo-highlight">✓ Rushdown seguro.</p>
+                    <p class="duo-desc">Braum garante que o Warwick chegue no oponente sem ser punido. Defesa impenetrável que vira ataque.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="tier-row tier-b">
-            <div class="tier-label">B</div>
-            <div class="tier-content">
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/ekko.avif"><span class="vs-text">&</span><img src="champs/braum.avif"></div>
-                    <div class="team-title">Safe Rewind</div>
-                    <span class="fuse-tag">FUSE: FURY</span>
-                    <div class="team-desc"><span class="cons">⚠ Dano inconsistente.</span>Time extremamente seguro defensivamente, mas que demora a fechar os rounds.</div>
-                </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/jinx.avif"><span class="vs-text">&</span><img src="champs/teemo.avif"></div>
-                    <div class="team-title">Bullet Hell</div>
-                    <span class="fuse-tag">FUSE: SIDEKICK</span>
-                    <div class="team-desc"><span class="cons">⚠ Defesa frágil.</span>Se o oponente conseguir aproximar, Jinx e Teemo sofrem muito para resetar o neutro.</div>
-                </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/yasuo.avif"><span class="vs-text">&</span><img src="champs/vi.avif"></div>
-                    <div class="team-title">Momentum Rush</div>
-                    <span class="fuse-tag">FUSE: FREESTYLE</span>
-                    <div class="team-desc"><span class="cons">⚠ Gasto de Barra.</span>Agressividade pura que depende de muitos recursos para manter a vantagem.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/caitlyn.avif"><span class="duo-separator">&</span><img src="champs/braum.avif"></div>
+                    <h3 class="duo-name">IRON WALL</h3>
+                    <span class="fuse-text">FUSE: 2X ASSIST</span>
+                    <p class="duo-highlight">✓ Defesa absoluta.</p>
+                    <p class="duo-desc">O time mais difícil de invadir. Braum defende enquanto Caitlyn mina a vida com tiros precisos.</p>
                 </div>
             </div>
         </div>
 
-        <div class="tier-row tier-c">
-            <div class="tier-label">C</div>
-            <div class="tier-content">
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/caitlyn.avif"><span class="vs-text">&</span><img src="champs/illaoi.avif"></div>
-                    <div class="team-title">Sniper Setup</div>
-                    <span class="fuse-tag">FUSE: 2X ASSIST</span>
-                    <div class="team-desc"><span class="cons">⚠ Conflito de range.</span>Caitlyn quer distância e Illaoi quer o canto. Exige muita coordenação.</div>
+        <div class="tier-row">
+            <div class="tier-label rank-b">B</div>
+            <div class="duo-grid">
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/akali.avif"><span class="duo-separator">&</span><img src="champs/braum.avif"></div>
+                    <h3 class="duo-name">PROTECTED SHADOW</h3>
+                    <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
+                    <p class="duo-highlight">✓ Mix-ups seguros.</p>
+                    <p class="duo-desc">Usa o escudo de Braum para cobrir os pontos cegos da Akali durante a saída da fumaça.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/darius.avif"><span class="vs-text">&</span><img src="champs/ahri.avif"></div>
-                    <div class="team-title">Heavy Charm</div>
-                    <span class="fuse-tag">FUSE: SIDEKICK</span>
-                    <div class="team-desc"><span class="cons">⚠ Ritmos diferentes.</span>Dificuldade em manter uma pressão fluida devido à velocidade distinta dos golpes.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/ekko.avif"><span class="duo-separator">&</span><img src="champs/jinx.avif"></div>
+                    <h3 class="duo-name">CHAOS THEORY</h3>
+                    <span class="fuse-text">FUSE: 2X ASSIST</span>
+                    <p class="duo-highlight">✓ Sinergia clássica.</p>
+                    <p class="duo-desc">Time sólido e fácil de jogar, mas que sofre contra personagens de mobilidade extrema no meta atual.</p>
                 </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/blitzcrank.avif"><span class="vs-text">&</span><img src="champs/jinx.avif"></div>
-                    <div class="team-title">Rocket Hook</div>
-                    <span class="fuse-tag">FUSE: DOUBLE DOWN</span>
-                    <div class="team-desc"><span class="cons">⚠ Tudo ou Nada.</span>Se o Blitz errar o puxão, a Jinx fica exposta demais para punições.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/yasuo.avif"><span class="duo-separator">&</span><img src="champs/darius.avif"></div>
+                    <h3 class="duo-name">NOXIAN WIND</h3>
+                    <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
+                    <p class="duo-highlight">✓ Alto dano bruto.</p>
+                    <p class="duo-desc">Dupla focada em punir erros com combos pesados. Sofre para aproximar contra zoners como Caitlyn.</p>
                 </div>
-            </div>
-        </div>
-
-        <div class="tier-row tier-d">
-            <div class="tier-label">D</div>
-            <div class="tier-content">
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/teemo.avif"><span class="vs-text">&</span><img src="champs/braum.avif"></div>
-                    <div class="team-title">Passive Guards</div>
-                    <span class="fuse-tag">FUSE: PULSE</span>
-                    <div class="team-desc"><span class="cons">⚠ Sem agressão.</span>Time puramente reativo que entrega o controle do jogo totalmente ao adversário.</div>
-                </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/warwick.avif"><span class="vs-text">&</span><img src="champs/caitlyn.avif"></div>
-                    <div class="team-title">Opposite Ends</div>
-                    <span class="fuse-tag">FUSE: JUGGERNAUT</span>
-                    <div class="team-desc"><span class="cons">⚠ Antisinérgicos.</span>Planos de jogo opostos. As assistências não se complementam.</div>
-                </div>
-                <div class="team-card">
-                    <div class="team-visual"><img src="champs/yasuo.avif"><span class="vs-text">&</span><img src="champs/darius.avif"></div>
-                    <div class="team-title">Resource Hogs</div>
-                    <span class="fuse-tag">FUSE: FREESTYLE</span>
-                    <div class="team-desc"><span class="cons">⚠ Briga por barra.</span>Ambos precisam gastar muita barra de especial para serem eficazes.</div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/teemo.avif"><span class="duo-separator">&</span><img src="champs/blitzcrank.avif"></div>
+                    <h3 class="duo-name">TOXIC HOOK</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Controle de mapa.</p>
+                    <p class="duo-desc">A tática é puxar o oponente para cima dos cogumelos. Muito irritante, mas pouco eficiente em alto nível.</p>
                 </div>
             </div>
         </div>
 
+        <div class="tier-row">
+            <div class="tier-label rank-c">C</div>
+            <div class="duo-grid">
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/akali.avif"><span class="duo-separator">&</span><img src="champs/yasuo.avif"></div>
+                    <h3 class="duo-name">SHADOW BLADE</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Estilo técnico.</p>
+                    <p class="duo-desc">Muita mobilidade, mas ambos são "papel". Um erro na defesa e a dupla explode rapidamente.</p>
+                </div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/darius.avif"><span class="duo-separator">&</span><img src="champs/illaoi.avif"></div>
+                    <h3 class="duo-name">HEAVY HITTERS</h3>
+                    <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
+                    <p class="duo-highlight">✓ Poder de impacto.</p>
+                    <p class="duo-desc">Time extremamente lento. Contra personagens como Ekko ou Ahri, eles raramente conseguem tocar no oponente.</p>
+                </div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/teemo.avif"><span class="duo-separator">&</span><img src="champs/yasuo.avif"></div>
+                    <h3 class="duo-name">ANNOYING BREEZE</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Pokes constantes.</p>
+                    <p class="duo-desc">Os planos de jogo não batem. Yasuo quer rushdown e Teemo quer distância, criando lacunas no jogo em equipe.</p>
+                </div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/blitzcrank.avif"><span class="duo-separator">&</span><img src="champs/illaoi.avif"></div>
+                    <h3 class="duo-name">HAND OF GOD</h3>
+                    <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
+                    <p class="duo-highlight">✓ Setup de tentáculos.</p>
+                    <p class="duo-desc">Depende totalmente do Blitz acertar o grab. Se errar, Illaoi fica vulnerável e sem jogo ofensivo.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
