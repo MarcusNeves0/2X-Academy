@@ -12,7 +12,7 @@
             padding: 0 20px;
             display: flex;
             flex-direction: column;
-            gap: 40px; /* Espaço entre os blocos de Tier */
+            gap: 40px;
         }
 
         .page-header { text-align: center; margin-bottom: 20px; }
@@ -26,7 +26,7 @@
             overflow: hidden;
             align-items: stretch;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            min-height: 500px; /* Garante que todos os rankings tenham tamanho similar */
+            min-height: 520px; /* Altura padronizada para todos os rankings */
         }
 
         /* Lateral do Rank */
@@ -75,7 +75,7 @@
         .duo-portraits img { width: 65px; height: 65px; border-radius: 8px; border: 2px solid #4a5568; object-fit: cover; }
         .duo-separator { color: #00f070; font-family: 'Russo One', sans-serif; font-size: 1.2em; }
 
-        .duo-name { font-family: 'Russo One', sans-serif; color: #fff; font-size: 1.2em; text-transform: uppercase; margin: 0; }
+        .duo-name { font-family: 'Russo One', sans-serif; color: #fff; font-size: 1.2em; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
         .fuse-text { color: #ff4655; font-weight: bold; font-size: 0.8em; text-transform: uppercase; margin: 5px 0 15px 0; letter-spacing: 1px; }
 
         .duo-highlight { color: #00f070; font-weight: bold; font-size: 0.9em; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
@@ -113,28 +113,28 @@
                     <h3 class="duo-name">WIND & TIME</h3>
                     <span class="fuse-text">FUSE: 2X ASSIST</span>
                     <p class="duo-highlight">✓ Mix-ups de elite.</p>
-                    <p class="duo-desc">Maior teto de habilidade do jogo. Ekko abre a guarda com clones enquanto Akali destrói com combos longos.</p>
+                    <p class="duo-desc">Maior teto de habilidade do jogo. Ekko abre a guarda com clones enquanto Akali destrói com combos longos e fumaça.</p>
+                </div>
+                <div class="duo-card">
+                    <div class="duo-portraits"><img src="champs/jinx.avif"><span class="duo-separator">&</span><img src="champs/vi.avif"></div>
+                    <h3 class="duo-name">ARCANE SISTERS</h3>
+                    <span class="fuse-text">FUSE: FREESTYLE</span>
+                    <p class="duo-highlight">✓ Sinergia Perfeita.</p>
+                    <p class="duo-desc">As irmãs de Zaun dominam o meta. Pressão constante e punição pesada no canto com trocas fluidas.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/jinx.avif"><span class="duo-separator">&</span><img src="champs/ahri.avif"></div>
-                    <h3 class="duo-name">ARCANE SISTERS</h3>
+                    <h3 class="duo-name">CHAOTIC CHARM</h3>
                     <span class="fuse-text">FUSE: FREESTYLE</span>
                     <p class="duo-highlight">✓ Pressão infinita.</p>
-                    <p class="duo-desc">Sinergia de controle de longa distância e punição pesada. É o time mais equilibrado para dominar o neutro.</p>
-                </div>
-                <div class="duo-card">
-                    <div class="duo-portraits"><img src="champs/akali.avif"><span class="duo-separator">&</span><img src="champs/ahri.avif"></div>
-                    <h3 class="duo-name">SHADOW & SIGHT</h3>
-                    <span class="fuse-text">FUSE: FREESTYLE</span>
-                    <p class="duo-highlight">✓ Mobilidade extrema.</p>
-                    <p class="duo-desc">Incapaz de ser rastreado. Ahri mantém o oponente em blockstring enquanto Akali prepara o Shuriken letal.</p>
+                    <p class="duo-desc">Controle de longa distância e punição rápida. O time mais equilibrado para dominar o neutro.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/darius.avif"><span class="duo-separator">&</span><img src="champs/warwick.avif"></div>
                     <h3 class="duo-name">BLOODY HUNT</h3>
                     <span class="fuse-text">FUSE: DOUBLE DOWN</span>
                     <p class="duo-highlight">✓ Dano explosivo.</p>
-                    <p class="duo-desc">Darius aplica sangramento e a velocidade do Warwick impede qualquer chance de recuperação.</p>
+                    <p class="duo-desc">Darius aplica sangramento e a velocidade do Warwick impede qualquer chance de recuperação adversária.</p>
                 </div>
             </div>
         </div>
@@ -188,21 +188,21 @@
                     <h3 class="duo-name">CHAOS THEORY</h3>
                     <span class="fuse-text">FUSE: 2X ASSIST</span>
                     <p class="duo-highlight">✓ Sinergia clássica.</p>
-                    <p class="duo-desc">Time sólido e fácil de jogar, mas que sofre contra personagens de mobilidade extrema no meta atual.</p>
+                    <p class="duo-desc">Time sólido e fácil de jogar, mas que sofre contra personagens de mobilidade extrema no meta.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/yasuo.avif"><span class="duo-separator">&</span><img src="champs/darius.avif"></div>
                     <h3 class="duo-name">NOXIAN WIND</h3>
                     <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
                     <p class="duo-highlight">✓ Alto dano bruto.</p>
-                    <p class="duo-desc">Dupla focada em punir erros com combos pesados. Sofre para aproximar contra zoners como Caitlyn.</p>
+                    <p class="duo-desc">Dupla focada em punir erros com combos pesados. Sofre para aproximar contra zoners.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/teemo.avif"><span class="duo-separator">&</span><img src="champs/blitzcrank.avif"></div>
                     <h3 class="duo-name">TOXIC HOOK</h3>
                     <span class="fuse-text">FUSE: FREESTYLE</span>
                     <p class="duo-highlight">✓ Controle de mapa.</p>
-                    <p class="duo-desc">A tática é puxar o oponente para cima dos cogumelos. Muito irritante, mas pouco eficiente em alto nível.</p>
+                    <p class="duo-desc">Puxar o oponente para cima dos cogumelos. Muito irritante, mas pouco eficiente em alto nível.</p>
                 </div>
             </div>
         </div>
@@ -215,21 +215,21 @@
                     <h3 class="duo-name">SHADOW BLADE</h3>
                     <span class="fuse-text">FUSE: FREESTYLE</span>
                     <p class="duo-highlight">✓ Estilo técnico.</p>
-                    <p class="duo-desc">Muita mobilidade, mas ambos são "papel". Um erro na defesa e a dupla explode rapidamente.</p>
+                    <p class="duo-desc">Muita mobilidade, mas ambos possuem pouca vida. Um erro na defesa e a dupla explode.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/darius.avif"><span class="duo-separator">&</span><img src="champs/illaoi.avif"></div>
                     <h3 class="duo-name">HEAVY HITTERS</h3>
                     <span class="fuse-text">FUSE: HANDSHAKE TAG</span>
                     <p class="duo-highlight">✓ Poder de impacto.</p>
-                    <p class="duo-desc">Time extremamente lento. Contra personagens como Ekko ou Ahri, eles raramente conseguem tocar no oponente.</p>
+                    <p class="duo-desc">Time extremamente lento. Contra personagens como Ekko ou Ahri, eles raramente tocam no oponente.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/teemo.avif"><span class="duo-separator">&</span><img src="champs/yasuo.avif"></div>
                     <h3 class="duo-name">ANNOYING BREEZE</h3>
                     <span class="fuse-text">FUSE: FREESTYLE</span>
                     <p class="duo-highlight">✓ Pokes constantes.</p>
-                    <p class="duo-desc">Os planos de jogo não batem. Yasuo quer rushdown e Teemo quer distância, criando lacunas no jogo em equipe.</p>
+                    <p class="duo-desc">Os planos de jogo não batem. Yasuo quer rushdown e Teemo quer distância.</p>
                 </div>
                 <div class="duo-card">
                     <div class="duo-portraits"><img src="champs/blitzcrank.avif"><span class="duo-separator">&</span><img src="champs/illaoi.avif"></div>
